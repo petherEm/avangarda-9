@@ -18,18 +18,26 @@ interface HotelPopupProps {
 export default function HotelPopup({ popups, lang }: HotelPopupProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPopup, setCurrentPopup] = useState<Popup | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Ensure we're on the client side
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (popups && popups.length > 0) {
+    // Only run after component is mounted and we have popups
+    if (isMounted && popups && popups.length > 0) {
       setCurrentPopup(popups[0]);
       const timer = setTimeout(() => {
         setIsOpen(true);
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [popups]);
+  }, [popups, isMounted]);
 
-  if (!currentPopup) {
+  // Don't render anything during SSR or if no popup data
+  if (!isMounted || !currentPopup) {
     return null;
   }
 

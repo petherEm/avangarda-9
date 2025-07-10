@@ -13,6 +13,60 @@
  */
 
 // Source: schema.json
+export type Popup = {
+  _id: string;
+  _type: "popup";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  pltitle?: string;
+  entitle?: string;
+  slug?: Slug;
+  plkeyMessage?: string;
+  enkeyMessage?: string;
+  popupImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  isActive?: boolean;
+  displayFrom?: string;
+  displayTo?: string;
+};
+
+export type Menu = {
+  _id: string;
+  _type: "menu";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  restaurant?: "dzika-roza" | "klub-coola" | "bar-przystan";
+  menuName?: string;
+  slug?: Slug;
+  menuFile?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  };
+  description?: string;
+  isActive?: boolean;
+  validFrom?: string;
+  validUntil?: string;
+  displayOrder?: number;
+};
+
 export type Voucher = {
   _id: string;
   _type: "voucher";
@@ -57,6 +111,7 @@ export type Category = {
   _updatedAt: string;
   _rev: string;
   title?: string;
+  entitle?: string;
   slug?: Slug;
   description?: string;
 };
@@ -317,8 +372,56 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = Voucher | OfferScope | Category | Offers | BlockContent | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = Popup | Menu | Voucher | OfferScope | Category | Offers | BlockContent | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./sanity/lib/menus/getMenusByRestaurant.ts
+// Variable: MENUS_BY_RESTAURANT_QUERY
+// Query: *[_type == "menu" && restaurant == $restaurant && isActive == true] {            _id,            restaurant,            menuName,            slug,            menuFile,            description,            isActive,            validFrom,            validUntil,            displayOrder        } | order(displayOrder asc, menuName asc)
+export type MENUS_BY_RESTAURANT_QUERYResult = Array<{
+  _id: string;
+  restaurant: "bar-przystan" | "dzika-roza" | "klub-coola" | null;
+  menuName: string | null;
+  slug: Slug | null;
+  menuFile: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  } | null;
+  description: string | null;
+  isActive: boolean | null;
+  validFrom: string | null;
+  validUntil: string | null;
+  displayOrder: number | null;
+}>;
+// Variable: ALL_MENUS_QUERY
+// Query: *[_type == "menu" && isActive == true] {            _id,            restaurant,            menuName,            slug,            menuFile,            description,            isActive,            validFrom,            validUntil,            displayOrder        } | order(restaurant asc, displayOrder asc, menuName asc)
+export type ALL_MENUS_QUERYResult = Array<{
+  _id: string;
+  restaurant: "bar-przystan" | "dzika-roza" | "klub-coola" | null;
+  menuName: string | null;
+  slug: Slug | null;
+  menuFile: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
+    };
+    media?: unknown;
+    _type: "file";
+  } | null;
+  description: string | null;
+  isActive: boolean | null;
+  validFrom: string | null;
+  validUntil: string | null;
+  displayOrder: number | null;
+}>;
+
 // Source: ./sanity/lib/offers/getOfferBySlug.ts
 // Variable: OFFER_BY_ID_QUERY
 // Query: *[_type == "offers" && slug.current == $slug] {            _id,            plname,            enname,            slug,            image,            price,            currency,            validUntil,            people,            minNights,            pldescription,            endescription,            "offerListing": offerListing[]-> {                _id,                plname,                enname,                description            }        } | order(plname asc) [0]
@@ -504,7 +607,7 @@ export type ALL_OFFERS_QUERYResult = Array<{
     _ref: string;
     _key: string;
     title: string | null;
-    entitle: null;
+    entitle: string | null;
     pltitle: null;
   }> | null;
 }>;
@@ -559,13 +662,69 @@ export type ALL_VOUCHERS_QUERYResult = Array<{
   endescription: string | null;
 }>;
 
+// Source: ./sanity/lib/popups/getPopups.ts
+// Variable: ACTIVE_POPUPS_QUERY
+// Query: *[_type == "popup" && isActive == true && (            (!defined(displayFrom) && !defined(displayTo)) ||            (!defined(displayFrom) && displayTo > now()) ||            (!defined(displayTo) && displayFrom <= now()) ||            (displayFrom <= now() && displayTo > now())        )] {            _id,            pltitle,            entitle,            slug,            plkeyMessage,            enkeyMessage,            popupImage,            isActive,            displayFrom,            displayTo        } | order(_createdAt desc)
+export type ACTIVE_POPUPS_QUERYResult = Array<{
+  _id: string;
+  pltitle: string | null;
+  entitle: string | null;
+  slug: Slug | null;
+  plkeyMessage: string | null;
+  enkeyMessage: string | null;
+  popupImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  isActive: boolean | null;
+  displayFrom: string | null;
+  displayTo: string | null;
+}>;
+// Variable: ALL_POPUPS_QUERY
+// Query: *[_type == "popup"] {            _id,            pltitle,            entitle,            slug,            plkeyMessage,            enkeyMessage,            popupImage,            isActive,            displayFrom,            displayTo        } | order(_createdAt desc)
+export type ALL_POPUPS_QUERYResult = Array<{
+  _id: string;
+  pltitle: string | null;
+  entitle: string | null;
+  slug: Slug | null;
+  plkeyMessage: string | null;
+  enkeyMessage: string | null;
+  popupImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  isActive: boolean | null;
+  displayFrom: string | null;
+  displayTo: string | null;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
+    "\n        *[_type == \"menu\" && restaurant == $restaurant && isActive == true] {\n            _id,\n            restaurant,\n            menuName,\n            slug,\n            menuFile,\n            description,\n            isActive,\n            validFrom,\n            validUntil,\n            displayOrder\n        } | order(displayOrder asc, menuName asc)": MENUS_BY_RESTAURANT_QUERYResult;
+    "\n        *[_type == \"menu\" && isActive == true] {\n            _id,\n            restaurant,\n            menuName,\n            slug,\n            menuFile,\n            description,\n            isActive,\n            validFrom,\n            validUntil,\n            displayOrder\n        } | order(restaurant asc, displayOrder asc, menuName asc)": ALL_MENUS_QUERYResult;
     "\n        *[_type == \"offers\" && slug.current == $slug] {\n            _id,\n            plname,\n            enname,\n            slug,\n            image,\n            price,\n            currency,\n            validUntil,\n            people,\n            minNights,\n            pldescription,\n            endescription,\n            \"offerListing\": offerListing[]-> {\n                _id,\n                plname,\n                enname,\n                description\n            }\n        } | order(plname asc) [0]": OFFER_BY_ID_QUERYResult;
     "*[_type == \"offers\"] {\n      _id,\n      plname,\n      enname,\n      slug,\n      image,\n      price,\n      validUntil,\n      people,\n      minNights,\n      pldescription,\n      endescription,\n      \"categories\": categories[] {\n        _ref,\n        _key,\n        \"title\": @->title,\n        \"entitle\": @->entitle, \n        \"pltitle\": @->pltitle\n      }\n    } | order(validFrom desc)": ALL_OFFERS_QUERYResult;
     "*[_type == \"voucher\" && slug.current == $slug][0] {\n      _id,\n      plname,\n      enname,\n      slug,\n      voucherImage,\n      voucherValue,\n      pldescription,\n      endescription\n    }": VOUCHER_BY_SLUG_QUERYResult;
     "*[_type == \"voucher\"] {\n      _id,\n      plname,\n      enname,\n      slug,\n      voucherImage,\n      voucherValue,\n      pldescription,\n      endescription\n    } | order(_createdAt desc)": ALL_VOUCHERS_QUERYResult;
+    "\n        *[_type == \"popup\" && isActive == true && (\n            (!defined(displayFrom) && !defined(displayTo)) ||\n            (!defined(displayFrom) && displayTo > now()) ||\n            (!defined(displayTo) && displayFrom <= now()) ||\n            (displayFrom <= now() && displayTo > now())\n        )] {\n            _id,\n            pltitle,\n            entitle,\n            slug,\n            plkeyMessage,\n            enkeyMessage,\n            popupImage,\n            isActive,\n            displayFrom,\n            displayTo\n        } | order(_createdAt desc)": ACTIVE_POPUPS_QUERYResult;
+    "\n        *[_type == \"popup\"] {\n            _id,\n            pltitle,\n            entitle,\n            slug,\n            plkeyMessage,\n            enkeyMessage,\n            popupImage,\n            isActive,\n            displayFrom,\n            displayTo\n        } | order(_createdAt desc)": ALL_POPUPS_QUERYResult;
   }
 }

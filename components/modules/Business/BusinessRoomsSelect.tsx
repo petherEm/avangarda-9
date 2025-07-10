@@ -218,10 +218,11 @@ export default function ConferenceRoomsComponent({
           <AnimatedDecorativeBar />
           <h1 className="title-light text-left">Sale Konferencyjne</h1>
           <p className="main-paragraph-light text-left max-w-2xl">
-            Hotel Avangarda*** oferuje wszechstronne sale konferencyjne, idealne
-            na każde wydarzenie. Wszystkie sale wyposażone są standardowo w
-            bezprzewodowy internet, ekran, projektor, nagłośnienie, mikrofon
-            oraz flipchart.
+            W Hotelu Avangarda znajdziesz nowoczesne i funkcjonalne
+            przestrzenie, które z łatwością dopasujesz do charakteru swojego
+            wydarzenia. Każda z sal jest wyposażona w szybkie łącze Wi-Fi,
+            ekran, projektor, nagłośnienie, mikrofon oraz flipchart, co zapewnia
+            komfort pracy i sprawny przebieg każdego spotkania.
           </p>
         </motion.div>
 

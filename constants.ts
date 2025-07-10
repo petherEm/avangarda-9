@@ -281,7 +281,7 @@ export interface GalleryImage {
 export const VENUES_DATA: Record<string, VenueCapacity> = {
   salaBankietowa: {
     nameKey: "events.venues.salaBankietowa.name",
-    capacity: 200,
+    capacity: 300,
     tables: 20,
     sizeKey: "events.venues.salaBankietowa.size",
     featuresKeys: [
@@ -295,7 +295,7 @@ export const VENUES_DATA: Record<string, VenueCapacity> = {
   },
   salaKominkowa: {
     nameKey: "events.venues.salaKominkowa.name",
-    capacity: 80,
+    capacity: 30,
     tables: 10,
     sizeKey: "events.venues.salaKominkowa.size",
     featuresKeys: [

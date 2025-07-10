@@ -20,39 +20,20 @@ export default async function BusinessMainPageAlt({
 
   return (
     <>
-      {/* <HeroImage image="/gallery-images/gal-06.png" title={title} /> */}
       <BusinessHero />
-
-      <AnimateOnScroll>
-        <BusinessIntro dict={dict} lang={lang} />
-      </AnimateOnScroll>
-      <AnimateOnScroll>
-        <BusinessBanquets dict={dict} lang={lang} />
-      </AnimateOnScroll>
-      <AnimateOnScroll>
-        <BusinessRommsSelect />
-      </AnimateOnScroll>
-
-      <AnimateOnScroll>
-        {/* <ClubCoola dict={dict} lang={lang} /> */}
-        <BusinessEntertainment dict={dict} lang={lang} />
-      </AnimateOnScroll>
-      <AnimateOnScroll>
-        <BusinessSpa dict={dict} lang={lang} />
-      </AnimateOnScroll>
-
-      <AnimateOnScroll>
-        <TrustedCompanies dict={dict} lang={lang} />
-      </AnimateOnScroll>
-      <AnimateOnScroll>
-        <GenericCTA
-          header="Skontaktuj się z nami"
-          leadText="Zadzwoń lub napisz do nas, aby dowiedzieć się więcej o naszej ofercie dla biznesu. Jesteśmy tu, aby pomóc Ci zorganizować idealne wydarzenie."
-          phoneNumber="+48 574 383 282"
-          downloadOffer={lang === "pl" ? "Pobierz ofertę" : "Download offer"}
-          variant="dark"
-        />
-      </AnimateOnScroll>
+      <BusinessIntro dict={dict} lang={lang} />
+      <BusinessBanquets dict={dict} lang={lang} />
+      <BusinessRommsSelect />
+      <BusinessEntertainment dict={dict} lang={lang} />
+      <BusinessSpa dict={dict} lang={lang} />
+      <TrustedCompanies dict={dict} lang={lang} />
+      <GenericCTA
+        header="Skontaktuj się z nami"
+        leadText="Zadzwoń lub napisz do nas, aby dowiedzieć się więcej o naszej ofercie dla biznesu. Jesteśmy tu, aby pomóc Ci zorganizować idealne wydarzenie."
+        phoneNumber="+48 574 383 282"
+        downloadOffer={lang === "pl" ? "Pobierz ofertę" : "Download offer"}
+        variant="dark"
+      />
     </>
   );
 }

@@ -59,7 +59,7 @@ export default function EventsIntro({ dict, lang }: EventsIntroProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative aspect-video w-full overflow-hidden"
+            className="relative aspect-[7/5] w-full overflow-hidden"
           >
             <Image
               src="/wedding/wed-room-04.jpg"
@@ -103,7 +103,7 @@ export default function EventsIntro({ dict, lang }: EventsIntroProps) {
             {Object.entries(VENUES_DATA).map(([key, venue]) => (
               <TabsContent key={key} value={key} className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                  <div className="relative aspect-[4/3] md:h-[400px] w-full overflow-hidden">
+                  <div className="relative aspect-[4/3] md:h-[480px] w-full overflow-hidden">
                     <Image
                       src={venue.image}
                       alt={t(venue.nameKey)}
@@ -123,7 +123,7 @@ export default function EventsIntro({ dict, lang }: EventsIntroProps) {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-pink-50 p-4 rounded-none text-center">
+                      <div className="bg-avangarda/10 p-4 rounded-none text-center">
                         <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                         <p className="text-sm text-avangarda">
                           {t("events.venueInfo.maxGuests")}
@@ -133,7 +133,7 @@ export default function EventsIntro({ dict, lang }: EventsIntroProps) {
                         </p>
                       </div>
 
-                      <div className="bg-pink-50 p-4 rounded-none text-center">
+                      <div className="bg-avangarda/10 p-4 rounded-none text-center">
                         <MapPin className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                         <p className="text-sm text-avangarda">
                           {t("events.venueInfo.area")}
@@ -151,7 +151,7 @@ export default function EventsIntro({ dict, lang }: EventsIntroProps) {
                       <ul className="grid grid-cols-2 gap-2">
                         {venue.featuresKeys.map((featureKey, i) => (
                           <li key={i} className="flex items-center gap-2">
-                            <div className="h-1.5 w-1.5 rounded-full bg-pink-500"></div>
+                            <div className="h-1.5 w-1.5 rounded-full bg-avangarda/100"></div>
                             <span>{t(featureKey)}</span>
                           </li>
                         ))}

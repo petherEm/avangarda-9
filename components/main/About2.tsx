@@ -179,7 +179,7 @@ const About = ({ dict, lang }: AboutProps) => {
 
                   {/* Events & Meetings */}
                   <li className="flex items-start gap-3">
-                    <div className="bg-pink-50 p-1.5 rounded-full text-pink-600 flex-shrink-0 mt-0.5">
+                    <div className="bg-avangarda/10 p-1.5 rounded-full text-pink-600 flex-shrink-0 mt-0.5">
                       <CalendarHeart className="w-4 h-4" />
                     </div>
                     <div>

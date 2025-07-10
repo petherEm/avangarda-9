@@ -427,10 +427,10 @@ const Business = ({ lang = "pl", dict }: BusinessProps) => {
                     whileHover={{ scale: 1.05 }}
                   >
                     <div className="text-3xl font-bold text-white mb-1">
-                      450m²
+                      680m²
                     </div>
                     <div className="text-base text-white/80">
-                      Powierzchnia sal
+                      Powierzchnia sal (do podziału)
                     </div>
                   </motion.div>
 
@@ -468,7 +468,11 @@ const Business = ({ lang = "pl", dict }: BusinessProps) => {
                     className="col-span-2 flex justify-start pt-4"
                   >
                     <Link href={businessUrl}>
-                      <Button size="lg" variant="fillRight">
+                      <Button
+                        size="lg"
+                        variant="fillRight"
+                        className="border-none"
+                      >
                         Dowiedz się więcej
                       </Button>
                     </Link>

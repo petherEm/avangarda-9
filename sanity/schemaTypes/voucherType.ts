@@ -2,18 +2,18 @@ import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'voucher',
-  title: 'Vouchers',
+  title: 'Vouchery',
   type: 'document',
   fields: [
     defineField({
       name: 'plname',
-      title: 'Polish Name',
+      title: 'Nazwa PL',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'enname',
-      title: 'English Name',
+      title: 'Nazwa EN',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -29,7 +29,7 @@ export default defineType({
     }),
     defineField({
       name: 'voucherImage',
-      title: 'Voucher Image',
+      title: 'Zdjęcie Vouchera',
       type: 'image',
       options: {
         hotspot: true,
@@ -38,18 +38,18 @@ export default defineType({
     }),
     defineField({
       name: 'voucherValue',
-      title: 'Voucher Value',
+      title: 'Wartość Vouchera',
       type: 'number',
       validation: (Rule) => Rule.required().positive(),
     }),
     defineField({
       name: 'pldescription',
-      title: 'Polish Description',
+      title: 'Opis PL',
       type: 'text',
     }),
     defineField({
       name: 'endescription',
-      title: 'English Description',
+      title: 'Opis EN',
       type: 'text',
     }),
   ],
@@ -63,7 +63,7 @@ export default defineType({
       const { title, subtitle } = selection;
       return {
         ...selection,
-        subtitle: subtitle ? `Value: ${subtitle}` : '',
+        subtitle: subtitle ? `Wartość: ${subtitle} PLN` : '',
       };
     },
   },

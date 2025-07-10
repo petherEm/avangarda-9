@@ -19,7 +19,7 @@
   },
   "about": {
     "title": "Hotel Avangarda",
-    "description": "Hotel Avangarda położony jest w samym centrum urokliwego miasteczka Różan, zapewniając doskonałe połączenie spokoju i łatwego dostępu do lokalnych atrakcji. To miejsce, gdzie tradycja spotyka nowoczesność, tworząc idealne warunki do odpoczynku i odkrywania okolicy.",
+    "description": "Hotel Avangarda znajduje się w samym sercu urokliwego Różana, oferując harmonijne połączenie spokoju, komfortu i bliskości lokalnych atrakcji. To miejsce, w którym tradycja spotyka nowoczesność, tworząc wyjątkową przestrzeń do wypoczynku, pracy i odkrywania okolicy.",
     "address": "ul. Przykładowa 1, 07-300 Różan",
     "phone": "+48 574 383 282",
     "email": "recepcja@avangarda.pl",
@@ -32,7 +32,7 @@
   },
   "offers": {
     "title": "Oferty i pakiety",
-    "description": "Nasze pakiety to idealny sposób na spędzenie czasu w wyjątkowej atmosferze. Wybierz ofertę dopasowaną do swoich potrzeb i ciesz się niezapomnianymi chwilami w Hotelu Avangarda.",
+    "description": "Pozwól sobie na chwile relaksu lub aktywny wypoczynek w wyjątkowym stylu. Wybierz pakiet dopasowany do swoich potrzeb i odkryj pełnię możliwości, jakie oferuje Hotel Avangarda.",
     "details": "Szczegóły",
     "from": "już od",
     "availability": "Dostępne pakiety zmieniają się sezonowo. Sprawdź aktualne oferty poniżej lub skontaktuj się z recepcją, aby uzyskać najnowsze informacje.",
@@ -42,7 +42,7 @@
   },
   "restaurants": {
     "title": "Restauracje i bary",
-    "description": "Nasza restauracja to miejsce, gdzie tradycyjne smaki spotykają się z nowoczesnym podejściem do kulinariów. Oferujemy szeroki wybór dań, przygotowywanych z najwyższą starannością i dbałością o jakość składników. Zapraszamy na wyjątkowe doznania smakowe w wyjątkowym miejscu.",
+    "description": "Zapraszamy w kulinarną podróż, gdzie tradycja łączy się z nowoczesnością. Restauracja Dzika Róża oferuje wykwintne dania inspirowane lokalnymi smakami, Bar Przystań zapewnia relaks nad wodą, a Klub Coola sprzyja wieczornej integracji przy drinku, bilardzie lub kręglach.",
     "details": "Szczegóły"
   },
   "diningDetails": {
@@ -85,7 +85,7 @@
   },
   "rooms": {
     "title": "Nasze pokoje",
-    "description": "Nasz hotel mieści się w dwóch budynkach i oferuje 42 komfortowe pokoje, w tym jedno- i dwuosobowe, rodzinne studia oraz apartamenty. W budynku głównym znajduje się winda, a część pokoi posiada balkon z widokiem na ogród lub rzekę Narew. W budynku zewnętrznym dostępne są przestronne pokoje dwu-, trzy- i pięcioosobowe.",
+    "description": "Hotel Avangarda oferuje 42 komfortowe pokoje rozmieszczone w dwóch budynkach – głównym i zewnętrznym. Do dyspozycji Gości oddajemy eleganckie pokoje jedno- i dwuosobowe, przestronne studia rodzinne oraz apartamenty o podwyższonym standardzie. W budynku głównym znajduje się winda, a wybrane pokoje posiadają balkon z widokiem na ogród lub rzekę Narew. W budynku zewnętrznym przygotowaliśmy komfortowe pokoje dla 2, 3 i 5 osób – idealne na rodzinny lub grupowy wypoczynek.",
     "everyRoomHas": "Każdy pokój wyposażony jest w:",
     "roomAmenities": {
       "ac": "klimatyzację",
@@ -304,22 +304,22 @@
     },
     "services": {
       "hotStones": {
-        "name": "Masaż gorącymi kamieniami",
-        "description": "Głęboko relaksujący masaż z wykorzystaniem gorących kamieni bazaltowych.",
-        "price": "od 220 zł",
-        "duration": "60 min"
+        "name": "Rytułał Avangardy",
+        "description": "Zabieg, który oczyszcza, odżywia i przywraca blask. Peeling całego ciała przygotowuje skórę na intensywną pielęgnację, a całość wieńczy relaksujący masaż na odżywczej masce.",
+        "price": "340 zł",
+        "duration": "90 min"
       },
       "rejuvenation": {
-        "name": "Luksusowy zabieg odmładzający",
-        "description": "Intensywnie regenerujący zabieg z wykorzystaniem komórek macierzystych.",
-        "price": "od 380 zł",
-        "duration": "75 min"
+        "name": "Luksus w Różanie",
+        "description": "Peeling pobudzający mikrokrążenie, odżywczy masaż na masełku oraz satynowe wykończenie, które podkreśla naturalny blask skóry. Całość dopełnia ujędrniający i intensywnie nawilżający masaż twarzy.",
+        "price": "450 zł",
+        "duration": "120 min"
       },
       "chocolate": {
-        "name": "Rytuał czekoladowy",
-        "description": "Odżywczy rytuał z wykorzystaniem naturalnej czekolady i masła shea.",
-        "price": "od 320 zł",
-        "duration": "90 min"
+        "name": "Rytuał Doliny Narwi",
+        "description": "Idealny dla zabieganych – łączy energetyzujący masaż z peelingiem całego ciała na odżywczej masce, przywracając skórze gładkość i świeżość w krótkim czasie.",
+        "price": "270 zł",
+        "duration": "60 min"
       }
     },
     "hours": {
@@ -399,11 +399,11 @@
   },
   "events": {
     "title": "Uroczystości i Przyjęcia Rodzinne",
-    "description": "Zorganizuj niezapomniane wesele lub przyjęcie w naszym eleganckim obiekcie. Oferujemy przestronne sale, malowniczy ogród oraz wykwintne menu, które spełnią oczekiwania nawet najbardziej wymagających Gości. Nasz doświadczony zespół zadba o każdy szczegół, abyście mogli w pełni cieszyć się tym wyjątkowym dniem.",
+    "description": "Zorganizuj niezapomniane wesele, komunię lub rodzinne przyjęcie w eleganckim otoczeniu Hotelu Avangarda. Przestronne, stylowe sale, wykwintne menu oraz wyjątkowa lokalizacja w zielonej okolicy nad rzeką Narew tworzą idealne warunki do świętowania najważniejszych chwil w życiu. Otwarta przestrzeń i bliskość natury dodają uroczystościom niepowtarzalnego klimatu, a nasz doświadczony zespół zadba o każdy szczegół, by ten dzień był naprawdę wyjątkowy.",
     "bookDate": "Zarezerwuj termin",
     "downloadOffer": "Pobierz ofertę",
     "venuesTitle": "Nasze przestrzenie",
-    "venuesDescription": "Oferujemy różnorodne przestrzenie, które możemy dostosować do Twoich potrzeb. Niezależnie od tego, czy planujesz kameralne przyjęcie, czy wystawne wesele, znajdziemy idealne rozwiązanie.",
+    "venuesDescription": "Oferujemy różnorodne przestrzenie, które dopasujemy do charakteru Twojego wydarzenia. Niezależnie od tego, czy planujesz kameralne przyjęcie czy wystawne wesele – zadbamy o odpowiednią oprawę i komfort Gości.",
     "checkAvailability": "Sprawdź dostępność",
     "availableDates": "Dostępne terminy",
     "availabilityDescription": "Poniżej znajdziesz kalendarz z dostępnymi terminami na organizację wesela lub przyjęcia. Zielone daty oznaczają dostępne terminy. Wybierz datę, aby sprawdzić szczegóły lub zarezerwować termin.",
@@ -425,8 +425,8 @@
     "venues": {
       "salaBankietowa": {
         "name": "Sala Bankietowa",
-        "description": "Przestronna i elegancka przestrzeń idealna na wesela i większe przyjęcia. Oferuje nowoczesne udogodnienia w połączeniu z klasycznym wystrojem.",
-        "size": "300m²",
+        "description": "Przestronna i elegancka sala o powierzchni 680 m² to idealna oprawa dla wesel i większych przyjęć. Stylowy wystrój łączy się tu z nowoczesnymi udogodnieniami – doskonałą akustyką, profesjonalnym nagłośnieniem, klimatyzacją strefową oraz systemem nawiewu świeżego powietrza.",
+        "size": "680m²",
         "features": {
           "danceFloor": "Parkiet taneczny",
           "stage": "Scena dla zespołu",
@@ -437,7 +437,7 @@
       },
       "salaKominkowa": {
         "name": "Sala Kominkowa",
-        "description": "Kameralna przestrzeń z przytulnym kominkiem, idealna na mniejsze przyjęcia i uroczystości rodzinne w ciepłej atmosferze.",
+        "description": "Kameralna i stylowa przestrzeń z nastrojowym kominkiem – idealna na mniejsze przyjęcia, rodzinne uroczystości i spotkania w ciepłej, przytulnej atmosferze. To miejsce, które sprzyja bliskości, rozmowom i wspólnemu celebrowaniu ważnych chwil.",
         "size": "120m²",
         "features": {
           "fireplace": "Kominek",
@@ -449,7 +449,7 @@
       },
       "salaSosnowa": {
         "name": "Sala Sosnowa",
-        "description": "Stylowa sala z drewnianymi elementami wystroju, łącząca elegancję z naturalnym urokiem. Idealna na średnie przyjęcia.",
+        "description": "Stylowa przestrzeń z drewnianymi akcentami, która łączy elegancję z naturalnym urokiem. Doskonale sprawdzi się na średniej wielkości przyjęcia, uroczystości rodzinne czy spotkania w kameralnym gronie, oferując ciepłą i harmonijną atmosferę.",
         "size": "180m²",
         "features": {
           "woodenDecor": "Drewniana dekoracja",
@@ -461,7 +461,7 @@
       },
       "fortNo4": {
         "name": "Fort No. 4",
-        "description": "Wyjątkowa przestrzeń na świeżym powietrzu z historycznym urokiem. Idealna na letnie przyjęcia i wydarzenia w naturalnym otoczeniu.",
+        "description": "Wyjątkowa plenerowa przestrzeń z historycznym charakterem, otoczona zielenią i naturalnym krajobrazem. To idealne miejsce na letnie przyjęcia, pikniki i wydarzenia firmowe w niepowtarzalnej, swobodnej atmosferze.",
         "size": "250m²",
         "features": {
           "outdoorSpace": "Przestrzeń na świeżym powietrzu",
@@ -534,7 +534,7 @@
   },
   "business": {
     "title": "Oferta dla Biznesu",
-    "description": "Oferujemy nowoczesne i w pełni wyposażone przestrzenie konferencyjne, które spełnią oczekiwania nawet najbardziej wymagających klientów biznesowych. Nasze sale konferencyjne są idealne na szkolenia, konferencje, spotkania zarządu i wydarzenia firmowe. Zapewniamy najwyższej jakości obsługę, nowoczesny sprzęt audiowizualny oraz elastyczne możliwości aranżacji przestrzeni.",
+    "description": "Hotel Avangarda to idealne miejsce do organizacji profesjonalnych wydarzeń – od kameralnych spotkań zarządu po duże konferencje i szkolenia. Oferujemy nowoczesne, w pełni wyposażone sale konferencyjne z dostępem do zaawansowanego sprzętu audiowizualnego, szybkiego Internetu i elastycznej aranżacji przestrzeni. Doświadczona obsługa zadba o każdy szczegół, by Twoje wydarzenie przebiegło sprawnie i na najwyższym poziomie.",
     "downloadOffer": "Pobierz ofertę biznesową",
     "checkAvailability": "Sprawdź dostępność",
     "roomsTitle": "Nasze sale konferencyjne",

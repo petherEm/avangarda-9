@@ -163,7 +163,7 @@ function OfferGrid({ offers, lang = "en" }: OfferGridProps) {
           // Get the appropriate title based on language
           const categoryName =
             lang === "pl"
-              ? categoryObj?.pltitle || categoryObj?.title || categoryId
+              ? categoryObj?.title || categoryId
               : categoryObj?.entitle || categoryObj?.title || categoryId;
 
           return (

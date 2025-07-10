@@ -15,14 +15,7 @@ export default async function KidsPage({
   return (
     <>
       <EntertainmentHero />
-
-      <AnimateOnScroll>
-        <EntertainmentIntro dict={dict} lang={lang} />
-      </AnimateOnScroll>
-
-      <AnimateOnScroll>
-        <ClubCoola />
-      </AnimateOnScroll>
+      <EntertainmentIntro dict={dict} lang={lang} />
     </>
   );
 }

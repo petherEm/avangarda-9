@@ -12,9 +12,13 @@ import {
   Calendar,
   Clock,
   Users,
+  FileText,
+  Download,
 } from "lucide-react";
 import Image from "next/image";
 import { AnimatedDecorativeBar } from "@/components/animated-decorative-bar";
+import { ALL_MENUS_QUERYResult } from "@/sanity.types";
+import { fileUrl } from "@/lib/fileUrl";
 
 // Helper function to get nested dictionary values using dot notation
 const getNestedValue = (obj: any, path: string) => {
@@ -24,13 +28,14 @@ const getNestedValue = (obj: any, path: string) => {
 interface RestauracjaDzikaRozaProps {
   dict?: any;
   lang?: string;
+  menus: ALL_MENUS_QUERYResult;
 }
 
 // Testimonials data
 const testimonials = [
   {
     id: 1,
-    name: "Anna Kowalska",
+    name: "Ela",
     location: "Warszawa",
     rating: 5,
     text: "Restauracja Dzika Róża to prawdziwa perła! Kotlet schabowy był idealnie przygotowany, a obsługa niezwykle profesjonalna. Atmosfera restauracji jest elegancka, ale jednocześnie przytulna. Zdecydowanie wrócimy na kolejną kolację.",
@@ -38,8 +43,8 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Marek Nowak",
-    location: "Kraków",
+    name: "Marek",
+    location: "Ciechanów",
     rating: 5,
     text: "Byliśmy tu na uroczystości rodzinnej i wszystko było perfekcyjne. Menu sezonowe zachwyciło nas smakami, a desery domowe to prawdziwe dzieła sztuki. Polecam każdemu, kto szuka wyjątkowych doznań kulinarnych.",
     date: "Październik 2024",
@@ -49,6 +54,7 @@ const testimonials = [
 const RestauracjaDzikaRoza = ({
   dict,
   lang = "pl",
+  menus = [],
 }: RestauracjaDzikaRozaProps) => {
   // Helper function for translations
   const t = (key: string) => (dict ? getNestedValue(dict, key) || key : key);
@@ -57,14 +63,14 @@ const RestauracjaDzikaRoza = ({
     <Container className="mt-6 sm:mt-6 md:mt-4 lg:mt-0 mb-6 lg:mb-0 bg-white text-primary w-full lg:py-20">
       <div className="max-w-7xl mx-auto sm:px-4">
         {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 sm:px-0">
           {/* Main Featured Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative aspect-[7/6] w-full overflow-hidden"
+            className="relative aspect-square w-full overflow-hidden"
           >
             <Image
               src="/restaurant/rest-01.jpg"
@@ -109,10 +115,11 @@ const RestauracjaDzikaRoza = ({
               transition={{ delay: 0.2 }}
               className="main-paragraph-light"
             >
-              Zapraszamy do eleganckiej Restauracji Dzika Róża, gdzie tradycyjna
-              kuchnia polska spotyka się z nowoczesnymi technikami kulinarnymi.
-              Nasze menu łączy autentyczne smaki z artystyczną prezentacją,
-              tworząc niezapomniane doświadczenia kulinarne w stylowym wnętrzu.
+              Zapraszamy do Restauracji Dzika Róża – miejsca, gdzie tradycja
+              polskiej kuchni zyskuje nowoczesne oblicze. Autorskie menu łączy
+              klasyczne smaki z nowatorską formą podania, a stylowe wnętrze i
+              dopracowana atmosfera sprawiają, że każda wizyta staje się
+              wyjątkowym doświadczeniem kulinarnym.
             </motion.p>
 
             <motion.div
@@ -122,12 +129,27 @@ const RestauracjaDzikaRoza = ({
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4 mb-8"
             >
-              <Link href={`/${lang}/menu`}>
-                <Button className="bg-avangarda hover:bg-avangarda/90 flex items-center gap-2">
+              {menus.length > 0 ? (
+                <a
+                  href={fileUrl(menus[0]?.menuFile)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-avangarda hover:bg-avangarda/90 flex items-center gap-2">
+                    <Utensils className="h-4 w-4" />
+                    Zobacz Menu
+                  </Button>
+                </a>
+              ) : (
+                <Button
+                  variant="outline"
+                  disabled
+                  className="flex items-center gap-2"
+                >
                   <Utensils className="h-4 w-4" />
-                  Zobacz Menu
+                  Menu niedostępne
                 </Button>
-              </Link>
+              )}
               <Button variant="fillRight" className="w-fit">
                 <Calendar className="h-4 w-4" />
                 Zarezerwuj stolik
@@ -142,7 +164,7 @@ const RestauracjaDzikaRoza = ({
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Godziny otwarcia</h3>
@@ -151,7 +173,7 @@ const RestauracjaDzikaRoza = ({
                 <p className="text-sm text-slate-600">Sob-Ndz: 11:00 – 23:00</p>
               </div>
 
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Rezerwacje</h3>
@@ -171,7 +193,7 @@ const RestauracjaDzikaRoza = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-16 px-4 sm:px-0"
+          className="mb-16 sm:px-0"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -181,8 +203,8 @@ const RestauracjaDzikaRoza = ({
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {/* Row 1 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/restaurant/rest-10.jpg"
@@ -191,6 +213,8 @@ const RestauracjaDzikaRoza = ({
                 className="object-cover"
               />
             </div>
+
+            {/* Second image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/restaurant/rest-03.jpg"
@@ -199,8 +223,9 @@ const RestauracjaDzikaRoza = ({
                 className="object-cover"
               />
             </div>
-            {/* Row 2 */}
-            <div className="relative aspect-[16/10] overflow-hidden">
+
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
               <Image
                 src="/restaurant/rest-09.jpg"
                 alt="Prywatna sala restauracyjna"
@@ -208,7 +233,9 @@ const RestauracjaDzikaRoza = ({
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[16/10] overflow-hidden">
+
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
               <Image
                 src="/restaurant/rest-07.jpg"
                 alt="Tradycyjne polskie dania"
@@ -224,7 +251,7 @@ const RestauracjaDzikaRoza = ({
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-16 px-4 sm:px-0"
+          className="mb-16 sm:px-0"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <Quote className="h-8 w-8 text-avangarda" />
@@ -243,7 +270,7 @@ const RestauracjaDzikaRoza = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-pink-50 p-6 relative"
+                className="bg-avangarda/10 p-6 relative"
               >
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4">

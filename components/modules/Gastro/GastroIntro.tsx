@@ -3,10 +3,19 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ChefHat, Wine, Music, ArrowRight, Utensils } from "lucide-react";
+import {
+  ChefHat,
+  Wine,
+  Music,
+  ArrowRight,
+  Utensils,
+  FileText,
+} from "lucide-react";
 import Image from "next/image";
 import { AnimatedDecorativeBar } from "@/components/animated-decorative-bar";
 import BackgroundLogoBottomDark from "@/components/background-logo-bottom-dark";
+import { fileUrl } from "@/lib/fileUrl";
+import { ALL_MENUS_QUERYResult } from "@/sanity.types";
 
 // Helper function to get nested dictionary values using dot notation
 const getNestedValue = (obj: any, path: string) => {
@@ -16,9 +25,14 @@ const getNestedValue = (obj: any, path: string) => {
 interface GastroIntroProps {
   dict: any;
   lang: string;
+  menus: {
+    "dzika-roza": ALL_MENUS_QUERYResult;
+    "klub-coola": ALL_MENUS_QUERYResult;
+    "bar-przystan": ALL_MENUS_QUERYResult;
+  };
 }
 
-const GastroIntro = ({ dict, lang }: GastroIntroProps) => {
+const GastroIntro = ({ dict, lang, menus }: GastroIntroProps) => {
   // Helper function for translations
   const t = (key: string) => getNestedValue(dict, key) || key;
 
@@ -37,6 +51,7 @@ const GastroIntro = ({ dict, lang }: GastroIntroProps) => {
         "Obsługa bankietów",
       ],
       link: `/restaurant`,
+      menus: menus["dzika-roza"] || [],
     },
     {
       id: "klub-coola",
@@ -51,6 +66,7 @@ const GastroIntro = ({ dict, lang }: GastroIntroProps) => {
         "Rozrywka dla rodzin",
       ],
       link: `/klub-coola`,
+      menus: menus["klub-coola"] || [],
     },
     {
       id: "bar-przystan",
@@ -66,6 +82,7 @@ const GastroIntro = ({ dict, lang }: GastroIntroProps) => {
         "Taras nad rzeką",
       ],
       link: `/bar-przystan`,
+      menus: menus["bar-przystan"] || [],
     },
   ];
 
@@ -122,7 +139,7 @@ const GastroIntro = ({ dict, lang }: GastroIntroProps) => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     {/* Icon overlay */}
-                    <div className="absolute top-4 right-4  p-2 backdrop-blur-sm">
+                    <div className="absolute top-4 right-4 p-2 backdrop-blur-sm">
                       <IconComponent className="h-5 w-5 text-white" />
                     </div>
                   </div>
@@ -148,12 +165,35 @@ const GastroIntro = ({ dict, lang }: GastroIntroProps) => {
                       ))}
                     </div>
 
+                    {/* Menu Links */}
+                    {place.menus.length > 0 && (
+                      <div className="mb-4 space-y-2">
+                        <h4 className="text-sm font-medium text-white/90">
+                          Dostępne menu:
+                        </h4>
+                        <div className="space-y-1">
+                          {place.menus.slice(0, 3).map((menu) => (
+                            <a
+                              key={menu._id}
+                              href={fileUrl(menu.menuFile)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-xs text-white/70 hover:text-avangarda transition-colors"
+                            >
+                              <FileText className="h-3 w-3" />
+                              {menu.menuName}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     <Link href={place.link}>
                       <Button
                         variant="fillRight"
                         className="w-full border-none"
                       >
-                        Zobacz menu
+                        Zobacz więcej
                         <Utensils className="ml-2 h-3 w-3" />
                       </Button>
                     </Link>

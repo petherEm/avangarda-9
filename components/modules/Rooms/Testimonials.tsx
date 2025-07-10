@@ -24,7 +24,7 @@ const Testimonials = ({ lang = "pl", dict }: TestimonialsProps) => {
   const testimonials = [
     {
       id: 1,
-      name: "Anna Kowalska",
+      name: "Ania",
       location: "Warszawa",
       rating: 5,
       text: "Niesamowite miejsce! Personel bardzo pomocny, pokoje czyste i wygodne. SPA to prawdziwa oaza spokoju. Na pewno wrócimy!",
@@ -32,8 +32,8 @@ const Testimonials = ({ lang = "pl", dict }: TestimonialsProps) => {
     },
     {
       id: 2,
-      name: "Michał Nowak",
-      location: "Kraków",
+      name: "Michał",
+      location: "Wyszków",
       rating: 5,
       text: "Hotel przekroczył nasze oczekiwania. Restauracja serwuje wyśmienite posiłki, a lokalizacja jest idealna na relaks z dala od miejskiego zgiełku.",
       platform: "Booking.com",
@@ -41,7 +41,7 @@ const Testimonials = ({ lang = "pl", dict }: TestimonialsProps) => {
     {
       id: 3,
       name: "Katarzyna Wiśniewska",
-      location: "Gdańsk",
+      location: "Ostrołęka",
       rating: 5,
       text: "Organizowaliśmy tu wesele i wszystko było perfekcyjne. Obsługa na najwyższym poziomie, jedzenie wyśmienite, goście zachwyceni!",
       platform: "Google",

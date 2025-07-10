@@ -1,4 +1,3 @@
-import ClubCoola from "@/components/modules/Entertainment/ClubCoola";
 import EntertainmentHero from "@/components/modules/Entertainment/EntertainmentHero";
 import EntertainmentIntro from "@/components/modules/Entertainment/EntertainmentIntro";
 import { getDictionary } from "@/lib/dictionary";
@@ -15,7 +14,6 @@ export default async function EntertainmentMainPage({
     <>
       <EntertainmentHero />
       <EntertainmentIntro dict={dict} lang={lang} />
-      <ClubCoola />
     </>
   );
 }

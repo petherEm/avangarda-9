@@ -31,7 +31,7 @@ const Pakiety = async ({ params }: { params: Promise<{ lang: string }> }) => {
 
       <GenericCTA
         header="Skontaktuj się z nami"
-        leadText="Zadzwoń lub napisz do nas, aby dowiedzieć się więcej o naszej ofercie. Pomożemy Ci dobrać i zarezerwować pakiet bądź voucher."
+        leadText="Chętnie pomożemy dobrać ofertę dopasowaną do Twoich potrzeb. Zarezerwuj wyjątkowy pakiet pobytowy lub voucher i ciesz się niezapomnianym czasem w Hotelu Avangarda."
         phoneNumber="+48 574 383 282"
         variant="light"
       />

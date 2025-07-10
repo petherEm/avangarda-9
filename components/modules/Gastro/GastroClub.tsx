@@ -11,31 +11,54 @@ import {
   Star,
   Quote,
   Phone,
+  FileText,
+  Download,
 } from "lucide-react";
 import { AnimatedDecorativeBar } from "@/components/animated-decorative-bar";
 import BackgroundLogoBottomDark from "@/components/background-logo-bottom-dark";
+import { ALL_MENUS_QUERYResult } from "@/sanity.types";
+import { fileUrl } from "@/lib/fileUrl";
+import Link from "next/link";
+
+// Helper function to get nested dictionary values using dot notation
+const getNestedValue = (obj: any, path: string) => {
+  return path.split(".").reduce((acc, part) => acc && acc[part], obj);
+};
+
+interface GastroClubProps {
+  dict?: any;
+  lang?: string;
+  menus: ALL_MENUS_QUERYResult;
+}
 
 // Testimonials data for Club Coola
 const testimonials = [
   {
     id: 1,
-    name: "Tomasz Wiśniewski",
+    name: "Tomek",
     location: "Gdańsk",
     rating: 5,
     text: "Klub Coola to fantastyczne miejsce na wieczór z przyjaciółmi! Kręgle były w doskonałym stanie, a jedzenie zaskoczyło nas jakością. Atmosfera jest niepowtarzalna - połączenie dobrej zabawy z wyśmienitą kuchnią.",
-    date: "Grudzień 2024",
+    date: "Kwiecień 2024",
   },
   {
     id: 2,
-    name: "Katarzyna Zielińska",
+    name: "Katarzyna",
     location: "Wrocław",
     rating: 5,
     text: "Organizowaliśmy tu imprezę firmową i wszystko przebiegło perfekcyjnie. Obsługa była bardzo profesjonalna, a różnorodność atrakcji sprawiła, że każdy znalazł coś dla siebie. Zdecydowanie polecamy!",
-    date: "Listopad 2024",
+    date: "Wrzesień 2023",
   },
 ];
 
-export default function RestaurantFort() {
+export default function GastroClub({
+  dict,
+  lang = "pl",
+  menus = [],
+}: GastroClubProps) {
+  // Helper function for translations
+  const t = (key: string) => (dict ? getNestedValue(dict, key) || key : key);
+
   return (
     <Container className="relative mt-6 sm:mt-6 md:mt-4 lg:mt-0 mb-6 lg:mb-0 text-white w-full py-14 lg:py-20">
       {/* Background Image - Add z-index to push it behind content */}
@@ -44,7 +67,7 @@ export default function RestaurantFort() {
       </div>
       <div className="max-w-7xl mx-auto sm:px-4">
         {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 sm:px-4">
           <div>
             <AnimatedDecorativeBar />
 
@@ -80,11 +103,10 @@ export default function RestaurantFort() {
               transition={{ delay: 0.2 }}
               className="main-paragraph-dark"
             >
-              Zapraszamy do Club Coola, gdzie tradycyjna kuchnia polska spotyka
-              się z nowoczesnymi smakami. Nasza restauracja oferuje wyjątkowe
-              dania przygotowywane z najświeższych, lokalnych składników. Ciesz
-              się autentycznymi smakami w przytulnej atmosferze z widokiem na
-              malownicze otoczenie.
+              Klub Coola to miejsce, gdzie rozrywka spotyka się z kuchnią dla
+              każdego. W swobodnej, przyjaznej atmosferze serwujemy dania, które
+              trafiają w różne gusta – od klasycznych przekąsek po nowoczesne
+              propozycje idealne na wspólny wieczór.
             </motion.p>
 
             <motion.div
@@ -94,10 +116,27 @@ export default function RestaurantFort() {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4 mb-8"
             >
-              <Button className="bg-avangarda hover:bg-avangarda/90 flex items-center gap-2">
-                <Utensils className="h-4 w-4" />
-                Zobacz Menu
-              </Button>
+              {menus.length > 0 ? (
+                <a
+                  href={fileUrl(menus[0]?.menuFile)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-avangarda hover:bg-avangarda/90 flex items-center gap-2">
+                    <Utensils className="h-4 w-4" />
+                    Zobacz Menu
+                  </Button>
+                </a>
+              ) : (
+                <Button
+                  variant="outline"
+                  disabled
+                  className="flex items-center gap-2"
+                >
+                  <Utensils className="h-4 w-4" />
+                  Menu niedostępne
+                </Button>
+              )}
               <Button variant="fillRight" className="w-fit border-none">
                 <Calendar className="h-4 w-4" />
                 Zarezerwuj stolik
@@ -112,7 +151,7 @@ export default function RestaurantFort() {
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-white/10 backdrop-blur-sm p-4 ">
+              <div className="bg-white/10 backdrop-blur-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-white">Godziny otwarcia</h3>
@@ -124,7 +163,7 @@ export default function RestaurantFort() {
                   Sobota - Niedziela: 11:00 – 23:00
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 ">
+              <div className="bg-white/10 backdrop-blur-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-white">Rezerwacje</h3>
@@ -145,14 +184,13 @@ export default function RestaurantFort() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative aspect-[7/6] w-full overflow-hidden "
+            className="relative aspect-square w-full overflow-hidden"
           >
             <Image
               src="/klub/klub-01.JPG"
               alt="Klub Coola - wnętrze"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={100}
             />
           </motion.div>
@@ -164,7 +202,7 @@ export default function RestaurantFort() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-16 px-4 sm:px-0"
+          className="mb-16 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -174,9 +212,9 @@ export default function RestaurantFort() {
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {/* Row 1 */}
-            <div className="relative aspect-[16/10] overflow-hidden ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
+            <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/klub/klub-02.JPG"
                 alt="Wnętrze klubu"
@@ -185,7 +223,8 @@ export default function RestaurantFort() {
               />
             </div>
 
-            <div className="relative aspect-[16/10] overflow-hidden ">
+            {/* Second image - always visible */}
+            <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/klub/klub-03.JPG"
                 alt="Strefa gier"
@@ -194,8 +233,8 @@ export default function RestaurantFort() {
               />
             </div>
 
-            {/* Row 2 */}
-            <div className="relative aspect-[16/10] overflow-hidden ">
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
               <Image
                 src="/klub/klub-04.JPG"
                 alt="Bar i restauracja"
@@ -204,7 +243,8 @@ export default function RestaurantFort() {
               />
             </div>
 
-            <div className="relative aspect-[16/10] overflow-hidden ">
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
               <Image
                 src="/klub/klub-01.JPG"
                 alt="Kręgielnia"
@@ -220,7 +260,7 @@ export default function RestaurantFort() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mb-16 px-4 sm:px-0"
+          className="mb-16 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -244,7 +284,7 @@ export default function RestaurantFort() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/10 backdrop-blur-sm  p-6  relative"
+                className="bg-white/10 backdrop-blur-sm p-6 relative"
               >
                 {/* Quote Icon */}
                 <div className="absolute top-4 right-4">

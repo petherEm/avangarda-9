@@ -8,6 +8,7 @@ import {
   Utensils,
   CalendarHeart,
   TreePine,
+  Smile,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -139,8 +140,8 @@ const About = ({ dict, lang }: AboutProps) => {
                         Wyjątkowa lokalizacja
                       </h3>
                       <p className="text-gray-600 text-md">
-                        Położenie w zielonej okolicy tuż przy rzece, oferujące
-                        spokój i kontakt z naturą.
+                        Zaciszna, zielona okolica nad rzeką – idealna dla tych,
+                        którzy cenią spokój i bliskość natury.
                       </p>
                     </div>
                   </li>
@@ -155,8 +156,8 @@ const About = ({ dict, lang }: AboutProps) => {
                         Wellness i SPA
                       </h3>
                       <p className="text-gray-600 text-md">
-                        Fantastyczna strefa relaksu z basenem, sauną i
-                        profesjonalnymi zabiegami.
+                        Nowoczesna strefa relaksu z basenem, saunami, jacuzzi
+                        oraz bogatą ofertą zabiegów odnowy biologicznej.
                       </p>
                     </div>
                   </li>
@@ -171,8 +172,8 @@ const About = ({ dict, lang }: AboutProps) => {
                         Wyjątkowa restauracja
                       </h3>
                       <p className="text-gray-600 text-md">
-                        Prawdziwie niesamowita kuchnia z lokalnymi specjałami i
-                        sezonowym menu.
+                        Autorska kuchnia inspirowana lokalnymi smakami, sezonowe
+                        menu i elegancka atmosfera.
                       </p>
                     </div>
                   </li>
@@ -187,8 +188,9 @@ const About = ({ dict, lang }: AboutProps) => {
                         Przestrzeń eventowa
                       </h3>
                       <p className="text-gray-600 text-md">
-                        Idealne miejsce na wesela i spotkania biznesowe z
-                        profesjonalną obsługą.
+                        Stylowe wnętrza i profesjonalna obsługa – doskonałe
+                        warunki do organizacji wesel, uroczystości i spotkań
+                        firmowych.
                       </p>
                     </div>
                   </li>
@@ -196,15 +198,15 @@ const About = ({ dict, lang }: AboutProps) => {
                   {/* Green Location */}
                   <li className="flex items-start gap-3">
                     <div className="p-1.5 rounded-full text-avangarda flex-shrink-0 mt-0.5">
-                      <TreePine className="w-6 h-6" />
+                      <Smile className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-primary font-semibold text-lg mb-0.5">
-                        Wyjątkowa lokalizacja
+                        Jesteśmy tylko dla Ciebie
                       </h3>
                       <p className="text-gray-600 text-md">
-                        Położenie w zielonej okolicy tuż przy rzece, oferujące
-                        spokój i kontakt z naturą.
+                        Każdy Gość jest dla nas najważniejszy – stawiamy na
+                        serdeczną atmosferę, komfort i dbałość o detale.
                       </p>
                     </div>
                   </li>

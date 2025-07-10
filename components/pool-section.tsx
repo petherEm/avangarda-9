@@ -90,7 +90,7 @@ const PoolSection = ({ dict, lang }) => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <p className="font-medium">
                   {t("spa.poolPrices.adult.title") || "Adult Pass"}
                 </p>
@@ -98,7 +98,7 @@ const PoolSection = ({ dict, lang }) => {
                   {t("spa.poolPrices.adult.price") || "50 PLN / 2h"}
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <p className="font-medium">
                   {t("spa.poolPrices.child.title") || "Child Pass"}
                 </p>
@@ -106,7 +106,7 @@ const PoolSection = ({ dict, lang }) => {
                   {t("spa.poolPrices.child.price") || "30 PLN / 2h"}
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <p className="font-medium">
                   {t("spa.poolPrices.family.title") || "Family Pass"}
                 </p>

@@ -256,42 +256,41 @@ const Spa = ({ lang = "pl", dict, className }: SpaProps) => {
                     transition={{ delay: 0.3, duration: 0.6 }}
                     className="main-paragraph-dark"
                   >
-                    Odkryj oazę spokoju w naszym SPA, gdzie ciało i umysł
-                    znajdują pełne odprężenie. Hotel Avangarda oferuje wyjątkowe
-                    atrakcje wellness w luksusowym otoczeniu.
+                    Odkryj oazę spokoju w luksusowej strefie Wellness & SPA
+                    Hotelu Avangarda, miejscu pełnego odprężenia dla ciała i
+                    umysłu. Tradycyjne metody relaksacji harmonijnie łączą się
+                    tutaj z nowoczesnymi technikami odnowy biologicznej,
+                    zapewniając wyjątkowe doświadczenie regeneracji.
                   </motion.p>
                   <motion.p
                     variants={fadeInUp}
                     transition={{ delay: 0.4, duration: 0.6 }}
                     className="main-paragraph-dark"
                   >
-                    Nasze centrum SPA to miejsce, gdzie tradycyjne metody
-                    relaksacji spotykają się z nowoczesnymi technikami wellness,
-                    tworząc niepowtarzalne doświadczenie regeneracji.
+                    Na naszych Gości czeka basen rekreacyjny z brodzikiem,
+                    jacuzzi, sauny – fińska oraz Infrared, pokój relaksu z
+                    podgrzewaną leżanką, studnia lodowa, a także grota solna,
+                    gdzie w atmosferze kojących dźwięków natury można odciąć się
+                    od codziennego zgiełku.
                   </motion.p>
                   <motion.p
                     variants={fadeInUp}
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="main-paragraph-dark"
                   >
-                    Dla wszystkich Gości przygotowaliśmy basen rekreacyjny,
-                    brodzik oraz jacuzzi. Dorośli mają do dyspozycji dwie sauny
-                    – fińską i Infrared oraz pokój relaksu z podgrzewaną
-                    leżanką, brodzikami do moczenia stóp przed saunowaniem oraz
-                    studnią lodową, dzięki której można ochłodzić ciało płatkami
-                    lodu.
+                    Seanse w grocie wspomagają leczenie chorób układu
+                    oddechowego, nadciśnienia, niedoczynności tarczycy oraz
+                    schorzeń sercowo-naczyniowych. To idealne miejsce, by
+                    wzmocnić odporność, uspokoić oddech i wyciszyć umysł.
                   </motion.p>
                   <motion.p
                     variants={fadeInUp}
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="main-paragraph-dark"
                   >
-                    Dla wszystkich Gości przygotowaliśmy basen rekreacyjny,
-                    brodzik oraz jacuzzi. Dorośli mają do dyspozycji dwie sauny
-                    – fińską i Infrared oraz pokój relaksu z podgrzewaną
-                    leżanką, brodzikami do moczenia stóp przed saunowaniem oraz
-                    studnią lodową, dzięki której można ochłodzić ciało płatkami
-                    lodu.
+                    Ofertę uzupełniają relaksujące masaże oraz regenerujące
+                    zabiegi na twarz i ciało, szczegółowo opisane w katalogu
+                    zabiegów.
                   </motion.p>
                 </div>
                 <motion.div
@@ -300,7 +299,11 @@ const Spa = ({ lang = "pl", dict, className }: SpaProps) => {
                   className="pt-6"
                 >
                   <Link href={spaUrl}>
-                    <Button size="lg" variant="fillRight" className="w-fit">
+                    <Button
+                      size="lg"
+                      variant="fillRight"
+                      className="w-fit border-none"
+                    >
                       Dowiedz się więcej
                     </Button>
                   </Link>
@@ -333,7 +336,7 @@ const Spa = ({ lang = "pl", dict, className }: SpaProps) => {
                         alt="Luxurious spa interior"
                         fill
                         priority
-                        className="object-cover transition-all duration-1000 hover:scale-110"
+                        className="object-cover object-right transition-all duration-1000 hover:scale-110"
                         quality={100}
                       />
                       <motion.div
@@ -371,7 +374,7 @@ const Spa = ({ lang = "pl", dict, className }: SpaProps) => {
                           src="/diver/offers-background-2.jpg"
                           alt="Spa wellness area"
                           fill
-                          className="object-cover transition-all duration-1000 hover:scale-110"
+                          className="object-cover object-right transition-all duration-1000 hover:scale-110"
                         />
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"

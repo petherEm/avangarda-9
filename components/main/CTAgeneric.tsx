@@ -45,9 +45,10 @@ const Entertainment = ({ lang = "pl", dict }: EntertainmentProps) => {
 
           <div className="flex flex-col md:flex-row items-center text-center md:items-center justify-center gap-4 md:gap-8">
             <p className="main-paragraph-light max-w-2xl">
-              Odkryj szeroką gamę atrakcji i aktywności, które sprawią, że Twój
-              pobyt będzie pełen niezapomnianych wrażeń. W Avangarda każdy
-              znajdzie coś dla siebie.
+              Zaplanuj swój pobyt w Avangardzie i odkryj miejsce, które łączy
+              komfort, relaks i wyjątkowe atrakcje. Niezależnie od tego, czy
+              szukasz chwili wytchnienia, rodzinnej przygody czy inspirującego
+              spotkania – u nas każdy znajdzie coś dla siebie.
             </p>
           </div>
         </div>

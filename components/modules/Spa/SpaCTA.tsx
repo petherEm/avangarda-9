@@ -25,7 +25,7 @@ const SpaCTA = ({ dict, lang }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="bg-black text-white relative overflow-hidden"
+      className="bg-primary text-white relative overflow-hidden mb-28 "
     >
       <div className="flex min-h-screen lg:min-h-[600px]">
         {/* Image Section - Full height, half width, edge to edge */}
@@ -39,7 +39,7 @@ const SpaCTA = ({ dict, lang }) => {
         </div>
 
         {/* Content Section */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 md:p-12">
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-12">
           <div className="max-w-lg">
             {/* Mobile image */}
             <div className="lg:hidden relative aspect-[4/3] w-full overflow-hidden mb-8">
@@ -99,8 +99,8 @@ const SpaCTA = ({ dict, lang }) => {
                 >
                   <Button
                     size="lg"
-                    variant="secondary"
-                    className="w-full sm:w-auto transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+                    variant="fillRight"
+                    className="w-fit border-none"
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                   >

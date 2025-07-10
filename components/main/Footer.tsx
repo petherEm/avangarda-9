@@ -61,22 +61,26 @@ export function Footer({ lang, dict }: FooterProps) {
                     />
                   </Link>
                   <p className="text-white/80 text-sm md:text-base max-w-md leading-relaxed text-center md:text-left">
-                    Luksusowy hotel w sercu Różana oferujący niezapomniane
-                    doświadczenia, eleganckie wnętrza i wyjątkową gościnność.
+                    Prawdziwa Awangarda w sercu Różana. Elegancja, gościnność i
+                    bogactwo atrakcji tworzą tu przestrzeń pełną niezapomnianych
+                    wrażeń. Idealna na wypoczynek, spotkania biznesowe i
+                    rodzinne chwile.
                   </p>
                   {/* Social Media - centered on mobile */}
                   <div className="flex gap-4">
                     <Link
-                      href="https://facebook.com"
+                      href="https://www.facebook.com/hotelavangarda"
                       className="w-10 h-10 bg-white/10 hover:bg-avangarda rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                       aria-label="Facebook"
+                      target="_blank"
                     >
                       <Facebook className="h-5 w-5" />
                     </Link>
                     <Link
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/hotel_avangarda"
                       className="w-10 h-10 bg-white/10 hover:bg-avangarda rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                       aria-label="Instagram"
+                      target="_blank"
                     >
                       <Instagram className="h-5 w-5" />
                     </Link>

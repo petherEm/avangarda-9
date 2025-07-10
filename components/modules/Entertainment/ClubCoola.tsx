@@ -56,7 +56,7 @@ export default function ClubCoola() {
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4 rounded-lg">
+              <div className="bg-avangarda/10 p-4 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium">Godziny otwarcia</h3>
@@ -64,7 +64,7 @@ export default function ClubCoola() {
                 <p className="text-sm">Poniedziałek – Piątek: 16:00 – 22:00</p>
                 <p className="text-sm">Sobota - Niedziela: 10:00 – 22:00</p>
               </div>
-              <div className="bg-pink-50 p-4 rounded-lg">
+              <div className="bg-avangarda/10 p-4 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium">Rezerwacje</h3>
@@ -92,7 +92,7 @@ export default function ClubCoola() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
             <div className="absolute bottom-4 left-4 right-4">
-              <Badge className="bg-pink-500 text-white border-none mb-2">
+              <Badge className="bg-avangarda/100 text-white border-none mb-2">
                 Zapraszamy na kręgle
               </Badge>
               <h2 className="text-white text-xl font-semibold">
@@ -188,7 +188,7 @@ export default function ClubCoola() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-pink-50 p-6 rounded-lg">
+            <div className="bg-avangarda/10 p-6 rounded-lg">
               <h3 className="text-xl font-medium mb-4 text-avangarda">
                 KRĘGLE
               </h3>
@@ -219,7 +219,7 @@ export default function ClubCoola() {
               </Button>
             </div>
 
-            <div className="bg-pink-50 p-6 rounded-lg">
+            <div className="bg-avangarda/10 p-6 rounded-lg">
               <h3 className="text-xl font-medium mb-4 text-avangarda">
                 BILARD
               </h3>
@@ -261,7 +261,7 @@ export default function ClubCoola() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-pink-50 p-6 rounded-lg">
+            <div className="bg-avangarda/10 p-6 rounded-lg">
               <Music className="h-10 w-10 text-avangarda mb-4" />
               <h3 className="text-xl font-medium mb-2">Kręgle</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -271,7 +271,7 @@ export default function ClubCoola() {
               </p>
             </div>
 
-            <div className="bg-pink-50 p-6 rounded-lg">
+            <div className="bg-avangarda/10 p-6 rounded-lg">
               <Users className="h-10 w-10 text-avangarda mb-4" />
               <h3 className="text-xl font-medium mb-2">Bilard</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -281,7 +281,7 @@ export default function ClubCoola() {
               </p>
             </div>
 
-            <div className="bg-pink-50 p-6 rounded-lg">
+            <div className="bg-avangarda/10 p-6 rounded-lg">
               <Calendar className="h-10 w-10 text-avangarda mb-4" />
               <h3 className="text-xl font-medium mb-2">Gry zręcznościowe</h3>
               <p className="text-gray-600 leading-relaxed">

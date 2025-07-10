@@ -12,6 +12,8 @@ import {
   Bath,
   Coffee,
   ArrowRight,
+  SmilePlus,
+  Waves,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedDecorativeBar } from "@/components/animated-decorative-bar";
@@ -46,7 +48,7 @@ const fadeInRight = {
 export default function BusinessSpa({ dict, lang = "pl" }: BusinessSpaProps) {
   const services = [
     {
-      icon: Bath,
+      icon: Waves,
       title: "Sauna & Jacuzzi",
       subtitle: "Strefa relaksu",
     },
@@ -56,7 +58,7 @@ export default function BusinessSpa({ dict, lang = "pl" }: BusinessSpaProps) {
       subtitle: "Różne techniki",
     },
     {
-      icon: Sparkles,
+      icon: SmilePlus,
       title: "Zabiegi na twarz",
       subtitle: "Pielęgnacja premium",
     },
@@ -115,18 +117,18 @@ export default function BusinessSpa({ dict, lang = "pl" }: BusinessSpaProps) {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="main-paragraph-dark"
               >
-                Nasza strefa Spa to oaza spokoju w sercu hotelu. Po męczącym
-                dniu konferencyjnym zapraszamy na relaksujące zabiegi, które
-                przywrócą równowagę i energię.
+                Strefa SPA w Hotelu Avangarda to przestrzeń regeneracji i
+                wyciszenia po intensywnym dniu pełnym wyzwań. Zapraszamy Gości
+                biznesowych na odprężające zabiegi, które przywracają równowagę,
+                koncentrację i dobre samopoczucie.
               </motion.p>
               <motion.p
                 variants={fadeInUp}
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="main-paragraph-dark"
               >
-                Profesjonalni terapeuci zadbają o Twoje samopoczucie, oferując
-                szeroki wybór zabiegów dostosowanych do potrzeb gości
-                biznesowych.
+                Doświadczeni terapeuci oferują szeroką gamę masaży i rytuałów
+                wellness, dostosowanych do indywidualnych potrzeb.
               </motion.p>
             </div>
           </motion.div>
@@ -316,9 +318,12 @@ export default function BusinessSpa({ dict, lang = "pl" }: BusinessSpaProps) {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="main-paragraph-dark"
               >
-                Nasza strefa Spa to oaza spokoju w sercu hotelu. Po męczącym
-                dniu konferencyjnym zapraszamy na relaksujące zabiegi, które
-                przywrócą równowagę i energię.
+                Zapraszamy do naszej nowo otwartej strefy SPA, gdzie czekają
+                trzy nowoczesne gabinety odnowy biologicznej. Nasi doświadczeni
+                specjaliści zadbają o Państwa komfort i samopoczucie, oferując
+                szeroki wachlarz zabiegów relaksacyjnych i regeneracyjnych.
+                Gwarantujemy najwyższy standard higieny, bezpieczeństwa i pełen
+                profesjonalizm.
               </motion.p>
             </div>
 
@@ -382,7 +387,7 @@ export default function BusinessSpa({ dict, lang = "pl" }: BusinessSpaProps) {
               transition={{ delay: 0.9, duration: 0.6 }}
             >
               <Link href={`/${lang}/rozrywka`}>
-                <Button variant="fillRight" className="w-fit">
+                <Button variant="fillRight" className="w-fit border-none">
                   Więcej o Wellness & Spa
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>

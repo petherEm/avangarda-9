@@ -19,7 +19,7 @@ export default function EventTypes({ dict, lang = "pl" }: EventTypesProps) {
       title: "Wesela",
       subtitle: "Niezapomniane chwile w wyjątkowej scenerii",
       description:
-        "Hotel Avangarda to idealne miejsce na Twoje wymarzone wesele. Oferujemy eleganckie sale bankietowe, profesjonalną obsługę i niezapomnianą atmosferę. Nasze doświadczenie w organizacji wesel gwarantuje, że Twój dzień będzie wyjątkowy.",
+        "Hotel Avangarda to wyjątkowe miejsce, w którym marzenia o idealnym weselu stają się rzeczywistością. Oferujemy eleganckie sale bankietowe, profesjonalną obsługę i niepowtarzalną atmosferę, która tworzy tło dla najpiękniejszych wspomnień. Nasze doświadczenie i dbałość o każdy detal sprawiają, że Twój wielki dzień będzie naprawdę niezapomniany.",
       features: [
         "Sale bankietowe do 500 osób",
         "Profesjonalna obsługa kelnerska",
@@ -48,7 +48,7 @@ export default function EventTypes({ dict, lang = "pl" }: EventTypesProps) {
         },
       ],
       icon: Heart,
-      color: "bg-pink-50",
+      color: "bg-avangarda/10",
       accentColor: "text-pink-600",
       image: "/wedding/wed-room-04.jpg",
       galleryImages: ["/wedding/wed-room-03.jpg", "/wedding/wed-room-04.jpg"],
@@ -59,7 +59,7 @@ export default function EventTypes({ dict, lang = "pl" }: EventTypesProps) {
       title: "Komunie",
       subtitle: "Świętowanie ważnych momentów w życiu",
       description:
-        "Pierwsza Komunia Święta to wyjątkowy dzień w życiu dziecka i całej rodziny. W Hotel Avangarda zapewnimy uroczystą oprawę tego wydarzenia. Nasze sale i menu są dostosowane do potrzeb rodzinnych uroczystości.",
+        "Pierwsza Komunia Święta to szczególny moment w życiu dziecka i jego najbliższych. W Hotelu Avangarda zadbamy o uroczystą i pełną ciepła oprawę tego wyjątkowego dnia. Oferujemy eleganckie sale, dopracowane menu i rodzinną atmosferę – wszystko po to, by wspólne świętowanie pozostało w pamięci na długie lata.",
       features: [
         "Sale na 50-200 osób",
         "Menu dostosowane do dzieci i dorosłych",
@@ -139,9 +139,8 @@ export default function EventTypes({ dict, lang = "pl" }: EventTypesProps) {
       title: "Przyjęcia Plenerowe",
       subtitle: "Celebracja pod gwiazdami",
       description:
-        "Wykorzystaj piękne otoczenie Hotel Avangarda do organizacji niezapomnianego przyjęcia plenerowego. Nasze ogrody i tereny zewnętrzne tworzą idealną scenografię dla Twojego wydarzenia pod gołym niebem.",
+        "Wykorzystaj wyjątkowe otoczenie Hotelu Avangarda do organizacji niezapomnianego przyjęcia pod gołym niebem. Nasze otwarte przestrzenie w zielonej okolicy nad Narwią tworzą idealną scenerię dla letnich uroczystości, pikników i spotkań w swobodnej atmosferze, blisko natury.",
       features: [
-        "Przestronne ogrody i tarasy",
         "Namioty eventowe na każdą pogodę",
         "Grille i kuchnia plenerowa",
         "Oświetlenie dekoracyjne",

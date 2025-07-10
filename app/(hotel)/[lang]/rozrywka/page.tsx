@@ -16,10 +16,7 @@ export default async function EntertainmentMainPage({
   return (
     <>
       <EntertainmentHero />
-
-      <AnimateOnScroll>
-        <EntertainmentIntro dict={dict} lang={lang} />
-      </AnimateOnScroll>
+      <EntertainmentIntro dict={dict} lang={lang} />
     </>
   );
 }

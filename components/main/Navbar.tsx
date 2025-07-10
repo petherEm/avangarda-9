@@ -533,7 +533,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
                 <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                   <SheetTrigger asChild>
                     <button
-                      className="text-white p-5 rounded-full transition-all duration-300 h-16 w-16 active:scale-95 active:bg-white/20 flex items-center justify-center focus:outline-none"
+                      className="text-white p-3 rounded-full transition-all duration-300 h-14 w-8 active:scale-95 flex items-center justify-center focus:outline-none"
                       onMouseEnter={() =>
                         !isTouchDevice && setHamburgerHovered(true)
                       }
@@ -558,16 +558,18 @@ export function Navbar({ lang, dict }: NavbarProps) {
           // Original layout when not scrolled
           <>
             <Link
-              href="https://facebook.com"
+              href="https://www.facebook.com/hotelavangarda"
               className="hidden xl:flex text-white transition-colors duration-300 hover:text-avangarda"
               aria-label="Visit our Facebook page"
+              target="_blank"
             >
               <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
             <Link
-              href="https://facebook.com"
+              href="https://www.instagram.com/hotel_avangarda"
               className="hidden xl:flex text-white transition-colors duration-300 hover:text-avangarda"
               aria-label="Visit our Instagram page"
+              target="_blank"
             >
               <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
@@ -593,7 +595,7 @@ export function Navbar({ lang, dict }: NavbarProps) {
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="xl:hidden text-white p-4 rounded-full transition-all duration-300 h-14 w-14 active:scale-95 active:bg-white/20 flex items-center justify-center focus:outline-none"
+                  className="xl:hidden text-white p-4 rounded-full transition-all duration-300 h-14 w-8 active:scale-95 flex items-center justify-center focus:outline-none"
                   onMouseEnter={() =>
                     !isTouchDevice && setHamburgerHovered(true)
                   }

@@ -14,9 +14,7 @@ export default async function SpaMainPage({
   return (
     <>
       <SpaHero />
-
       <SpaIntro dict={dict} lang={lang} />
-
       <SpaCTA dict={dict} lang={lang} />
     </>
   );

@@ -3,25 +3,25 @@ import { defineField, defineType } from "sanity";
 
 export const offerScope = defineType({
   name: 'offerScope',
-  title: 'Offer Scope',
+  title: 'Zakres Oferty',
   type: 'document',
   icon: TagIcon,
   fields: [
     defineField({
       name: 'plname',
-      title: 'PL-Name',
+      title: 'Nazwa PL',
       type: 'string',
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'enname',
-      title: 'EN-Name',
+      title: 'Nazwa EN',
       type: 'string',
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Opis',
       type: 'text',
     }),
   ],

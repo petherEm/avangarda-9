@@ -20,21 +20,15 @@ const Offers = async ({ params }: { params: Promise<{ lang: string }> }) => {
     <>
       <OffersHero />
 
-      <AnimateOnScroll>
-        {/* @ts-expect-error - Sanity types don't match component interface but work at runtime */}
-        <OffersIntro dict={dict} lang={lang} offers={offers} />
-        {/* @ts-expect-error - Sanity types don't match component interface but work at runtime */}
-        <VouchersIntro dict={dict} lang={lang} vouchers={vouchers} />
-        {/* Enhanced Call to action - updated with styling from GastroIntro */}
-        <OffersCTA dict={dict} lang={lang} />
-      </AnimateOnScroll>
+      <OffersIntro dict={dict} lang={lang} offers={offers} />
+      <VouchersIntro dict={dict} lang={lang} vouchers={vouchers} />
+      {/* Enhanced Call to action - updated with styling from GastroIntro */}
 
       <GenericCTA
         header="Skontaktuj się z nami"
-        leadText="Zadzwoń lub napisz do nas, aby dowiedzieć się więcej o naszej ofercie dla biznesu. Jesteśmy tu, aby pomóc Ci zorganizować idealne wydarzenie."
+        leadText="Chętnie pomożemy dobrać ofertę dopasowaną do Twoich potrzeb. Zarezerwuj wyjątkowy pakiet pobytowy lub voucher i ciesz się niezapomnianym czasem w Hotelu Avangarda."
         phoneNumber="+48 574 383 282"
-        downloadOffer={lang === "pl" ? "Pobierz ofertę" : "Download offer"}
-        variant="dark"
+        variant="light"
       />
     </>
   );

@@ -445,15 +445,14 @@ export default function RoomsIntro({ dict, lang }: RoomsIntroProps) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="relative aspect-[4/3] w-full overflow-hidden shadow-2xl"
+            className="relative aspect-[8/7] w-full overflow-hidden"
           >
             <Image
               src="/diver/hotel-01.jpeg"
               alt={lang === "pl" ? "Budynek Główny" : "Main Building"}
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              quality={90}
+              quality={100}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </motion.div>
@@ -483,7 +482,6 @@ export default function RoomsIntro({ dict, lang }: RoomsIntroProps) {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <p className="main-paragraph-light">{t("rooms.everyRoomHas")}</p>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { icon: Wind, text: t("rooms.roomAmenities.ac") },

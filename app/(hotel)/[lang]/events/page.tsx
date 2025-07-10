@@ -1,4 +1,3 @@
-import AnimateOnScroll from "@/components/animate-on-scroll";
 import GenericCTA from "@/components/generic-cta";
 import EventsByCategory from "@/components/modules/Events/EventsByCategory";
 import EventsGallery from "@/components/modules/Events/EventsGallery";
@@ -17,23 +16,14 @@ export default async function EventsPage({
   return (
     <>
       <EventsHero />
-      <AnimateOnScroll>
-        <EventsIntro dict={dict} lang={lang} />
-      </AnimateOnScroll>
-      <EventsGallery />
-      <AnimateOnScroll>
-        <EventsByCategory dict={dict} lang={lang} />
-      </AnimateOnScroll>
-      {/* Contact Section */}
+      <EventsIntro dict={dict} lang={lang} />
+      <EventsGallery dict={dict} lang={lang} />
+      <EventsByCategory dict={dict} lang={lang} />
       <GenericCTA
-        header={lang === "pl" ? "Skontaktuj się z nami" : "Contact us"}
-        leadText={
-          lang === "pl"
-            ? "Masz pytania lub chcesz omówić szczegóły współpracy? Skontaktuj się z nami telefonicznie lub pobierz naszą szczegółową ofertę."
-            : "Have questions or want to discuss cooperation details? Contact us by phone or download our detailed offer."
-        }
+        header="Skontaktuj się z nami"
+        leadText="Masz pytania lub chcesz omówić szczegóły współpracy? Skontaktuj się z nami telefonicznie lub pobierz naszą szczegółową ofertę."
         phoneNumber="+48 574 383 282"
-        downloadOffer={lang === "pl" ? "Pobierz ofertę" : "Download offer"}
+        downloadOffer="Pobierz ofertę"
         variant="light"
       />
     </>

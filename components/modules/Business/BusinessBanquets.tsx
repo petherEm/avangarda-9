@@ -114,7 +114,11 @@ const BusinessBanquets = ({
                 className="pt-4"
               >
                 <Link href={banquetsUrl}>
-                  <Button size="lg" variant="fillRight" className="w-fit">
+                  <Button
+                    size="lg"
+                    variant="fillRight"
+                    className="w-fit border-none"
+                  >
                     Sprawdź ofertę biznesową
                   </Button>
                 </Link>
@@ -359,20 +363,16 @@ const BusinessBanquets = ({
                     transition={{ delay: 0.3, duration: 0.6 }}
                     className="main-paragraph-dark"
                   >
-                    Hotel Avangarda*** to idealne miejsce na organizację wydarzeń
-                    biznesowych najwyższej klasy. Nasze eleganckie sale
-                    konferencyjne i bankietowe zapewniają profesjonalne warunki
-                    dla każdego typu spotkania.
-                  </motion.p>
-
-                  <motion.p
-                    variants={fadeInUp}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                    className="main-paragraph-dark"
-                  >
-                    Oferujemy kompleksową obsługę konferencji, szkoleń,
-                    prezentacji oraz uroczystych bankietów. Nasze doświadczenie i
-                    profesjonalizm gwarantują sukces każdego wydarzenia.
+                    Dysponujemy nowoczesną, przestronną salą o powierzchni 680
+                    m², która pozwala na elastyczne dostosowanie układu do
+                    charakteru wydarzenia – od podziału na dwie niezależne
+                    przestrzenie po 340 m², po ustawienia teatralne,
+                    szkoleniowe, bankietowe czy wystawiennicze. Sala ma 4 metry
+                    wysokości, jest pozbawiona filarów i wyposażona w
+                    wielostrefowy system nagłośnienia (4x4 głośniki), sceniczne
+                    i LED-owe oświetlenie oraz podświetlane sufity. Komfort
+                    uczestników zapewniają klimatyzacja strefowa, możliwość
+                    nawiewu świeżego powietrza.
                   </motion.p>
 
                   <motion.p
@@ -380,10 +380,11 @@ const BusinessBanquets = ({
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="main-paragraph-dark"
                   >
-                    Dysponujemy nowoczesnymi salami o różnej pojemności - od
-                    kameralnych spotkań zarządu po duże konferencje dla 540 osób.
-                    Każda sala wyposażona jest w profesjonalny sprzęt
-                    audiowizualny, bezprzewodowy internet oraz klimatyzację.
+                    Dodatkowo oferujemy 200 m² powierzchni wystawienniczej
+                    idealnej na ekspozycje, stoiska promocyjne czy premiery
+                    produktów. Współpracujemy z doświadczonymi agencjami
+                    eventowymi i zapewniamy pełne wsparcie organizacyjne – od
+                    zaplecza technicznego po catering i atrakcje integracyjne.
                   </motion.p>
                 </motion.div>
 
@@ -394,7 +395,11 @@ const BusinessBanquets = ({
                   className="pt-4"
                 >
                   <Link href={banquetsUrl}>
-                    <Button size="lg" variant="fillRight" className="w-fit">
+                    <Button
+                      size="lg"
+                      variant="fillRight"
+                      className="w-fit border-none"
+                    >
                       Sprawdź ofertę biznesową
                     </Button>
                   </Link>

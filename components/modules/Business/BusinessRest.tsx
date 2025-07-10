@@ -16,6 +16,12 @@ import {
   Flame,
   TreePine,
   Fish,
+  Pizza,
+  Waves,
+  Hamburger,
+  Volleyball,
+  Bike,
+  Cherry,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { AnimatedDecorativeBar } from "@/components/animated-decorative-bar";
@@ -66,20 +72,16 @@ export default function BusinessEntertainment({
             <h1 className="title-light">Team Building</h1>
 
             <p className="main-paragraph-light">
-              Po intensywnym dniu pełnym spotkań i prezentacji, zapraszamy do
-              strefy relaksu Hotel Avangarda. Oferujemy szeroki wybór możliwości
-              odpoczynku - od relaksujących zabiegów spa po rozrywkę w Klubie
-              Coola.
+              Po intensywnym dniu spotkań i prezentacji zapraszamy do strefy
+              relaksu Hotelu Avangarda, gdzie praca ustępuje miejsca regeneracji
+              i integracji. Na Gości biznesowych czekają relaksujące zabiegi
+              SPA, sauna, jacuzzi oraz rozrywka w Klubie Coola – z bilardem,
+              dartem, kręglami i doskonałą atmosferą.
             </p>
             <p className="main-paragraph-light">
-              Nasi goście biznesowi mogą korzystać ze specjalnych pakietów
-              łączących konferencje z wellness, zapewniając idealną równowagę
-              między pracą a odpoczynkiem.
-            </p>
-            <p className="main-paragraph-light">
-              Nasi goście biznesowi mogą korzystać ze specjalnych pakietów
-              łączących konferencje z wellness, zapewniając idealną równowagę
-              między pracą a odpoczynkiem.
+              Oferujemy dedykowane pakiety łączące część konferencyjną z
+              aktywnym wypoczynkiem i integracją, tworząc idealną równowagę
+              między efektywną pracą a wspólnym czasem poza salą obrad.
             </p>
           </motion.div>
         </div>
@@ -134,48 +136,50 @@ export default function BusinessEntertainment({
                       </Badge>
                     </div>
                     <p className="main-paragraph-light">
-                      Po dniu pełnym spotkań biznesowych zapraszamy do Klubu
-                      Coola - miejsca, gdzie można się zrelaksować przy
-                      kręglach, bilardzie czy dartsach. Idealne na nieformalne
-                      spotkania zespołu czy networking w luźnej atmosferze.
+                      Po dniu intensywnej pracy zapraszamy do Klubu Coola –
+                      przestrzeni stworzonej z myślą o nieformalnych
+                      spotkaniach, integracji i dobrej zabawie. Kręgle, bilard i
+                      darty sprzyjają luźnej atmosferze, w której łatwiej o
+                      swobodny networking i wspólne świętowanie sukcesów.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Kręgle</p>
                       <p className="text-xs">4 profesjonalne tory</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Wine className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Bar</p>
                       <p className="text-xs">Szeroki wybór drinków</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Music className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Muzyka</p>
-                      <p className="text-xs">DJ w weekendy</p>
+                      <p className="text-xs">DJ (na zamówienie)</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Clock className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Godziny</p>
                       <p className="text-xs">16:00 - 22:00</p>
+                      <p className="text-xs">sb-ndz 10:00 - 22:00</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Bilard</p>
                       <p className="text-xs">Stoły profesjonalne</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
-                      <Coffee className="h-5 w-5 mx-auto mb-1 text-avangarda" />
-                      <p className="text-sm font-medium">Przekąski</p>
-                      <p className="text-xs">Menu barowe</p>
+                    <div className="bg-avangarda/10 p-4 text-center">
+                      <Pizza className="h-5 w-5 mx-auto mb-1 text-avangarda" />
+                      <p className="text-sm font-medium">Menu barowe</p>
+                      <p className="text-xs">Pyszne jedzenie</p>
                     </div>
                   </div>
 
@@ -188,11 +192,11 @@ export default function BusinessEntertainment({
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-1.5 w-1.5 rounded-full bg-avangarda"></div>
-                        <span className="text-sm">Bilard amerykański</span>
+                        <span className="text-sm">Bilard</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-1.5 w-1.5 rounded-full bg-avangarda"></div>
-                        <span className="text-sm">Darts elektroniczny</span>
+                        <span className="text-sm">Darts</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <div className="h-1.5 w-1.5 rounded-full bg-avangarda"></div>
@@ -245,47 +249,49 @@ export default function BusinessEntertainment({
                       </Badge>
                     </div>
                     <p className="main-paragraph-light">
-                      Uzupełnij swój pobyt biznesowy o aktywności na świeżym
-                      powietrzu. Oferujemy szereg możliwości rekreacji, które
-                      doskonale sprawdzą się jako przerwa od spotkań lub jako
-                      element integracji zespołu. Bliskość natury i aktywność
-                      fizyczna to doskonały sposób na odświeżenie umysłu.
+                      Zadbaj o równowagę między pracą a regeneracją dzięki
+                      aktywnościom na łonie natury. Proponujemy szeroki wachlarz
+                      form rekreacji na świeżym powietrzu – idealnych jako
+                      przerywnik w intensywnym dniu lub element budowania
+                      zespołu. Bliskość rzeki, zieleń i ruch to sprawdzony
+                      sposób na odświeżenie umysłu i pozytywną energię w
+                      zespole.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <div className="bg-avangarda/5 p-4 text-center rounded-lg">
-                      <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
+                    <div className="bg-avangarda/10 p-4 text-center ">
+                      <Waves className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Kajaki</p>
                       <p className="text-xs">Spływy grupowe</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center rounded-lg">
-                      <Wine className="h-5 w-5 mx-auto mb-1 text-avangarda" />
+                    <div className="bg-avangarda/10 p-4 text-center ">
+                      <Hamburger className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Restauracja Fort</p>
                       <p className="text-xs">Kuchnia regionalna</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center rounded-lg">
-                      <Music className="h-5 w-5 mx-auto mb-1 text-avangarda" />
+                    <div className="bg-avangarda/10 p-4 text-center ">
+                      <Volleyball className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Beach Volley</p>
                       <p className="text-xs">Boisko profesjonalne</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center rounded-lg">
+                    <div className="bg-avangarda/10 p-4 text-center ">
                       <Clock className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Dostępność</p>
                       <p className="text-xs">Maj - Wrzesień</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center rounded-lg">
-                      <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
+                    <div className="bg-avangarda/10 p-4 text-center ">
+                      <Bike className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Rowery</p>
                       <p className="text-xs">Wypożyczalnia</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center rounded-lg">
-                      <Coffee className="h-5 w-5 mx-auto mb-1 text-avangarda" />
+                    <div className="bg-avangarda/10 p-4 text-center ">
+                      <Cherry className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Pikniki</p>
                       <p className="text-xs">Catering plenerowy</p>
                     </div>
@@ -365,46 +371,48 @@ export default function BusinessEntertainment({
                       </Badge>
                     </div>
                     <p className="main-paragraph-light">
-                      Fort No. 4 to wyjątkowe miejsce na organizację wydarzeń
-                      integracyjnych dla zespołów biznesowych. Historyczna
-                      atmosfera fortu tworzy niepowtarzalne tło dla spotkań, a
-                      profesjonalnie wyposażona strefa BBQ pozwala na
-                      organizację niezapomnianych grilli i pikników firmowych.
+                      Fort No. 4 to niezwykła przestrzeń, w której historia
+                      spotyka się z nowoczesną formą integracji. Klimatyczne
+                      otoczenie zabytkowego fortu tworzy idealne tło dla
+                      nieformalnych spotkań zespołu, a w pełni wyposażona strefa
+                      BBQ umożliwia organizację wieczorów przy grillu. To
+                      doskonały sposób na budowanie relacji w swobodnej,
+                      autentycznej atmosferze.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Flame className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Grill Zone</p>
                       <p className="text-xs">Profesjonalne grille</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Team Building</p>
                       <p className="text-xs">Gry integracyjne</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <TreePine className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Natura</p>
                       <p className="text-xs">Otoczenie lasu</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Clock className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Dostępność</p>
                       <p className="text-xs">Cały rok</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Utensils className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Catering</p>
                       <p className="text-xs">Menu BBQ</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Music className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Rozrywka</p>
                       <p className="text-xs">Muzyka na żywo</p>
@@ -476,47 +484,47 @@ export default function BusinessEntertainment({
                       </Badge>
                     </div>
                     <p className="main-paragraph-light">
-                      Bar Przystań to unikalne miejsce położone nad brzegiem
-                      rzeki, gdzie świeże składniki spotykają się z malowniczym
-                      widokiem na wodę. Idealne na biznesowe lunche, nieformalne
-                      spotkania czy kolacje integracyjne. Nasza kuchnia
-                      specjalizuje się w świeżych, sezonowych potrawach
-                      przygotowywanych z lokalnych produktów.
+                      Bar Przystań to wyjątkowe miejsce nad samym brzegiem rzeki
+                      – idealne na biznesowe lunche, nieformalne spotkania i
+                      kolacje integracyjne w otoczeniu natury. Serwujemy świeże,
+                      sezonowe dania przygotowywane z lokalnych produktów, a
+                      malowniczy widok na wodę dopełnia całości, tworząc
+                      atmosferę swobody i odprężenia.
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Fish className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Świeże ryby</p>
                       <p className="text-xs">Lokalne połowy</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Utensils className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Kuchnia sezonowa</p>
                       <p className="text-xs">Lokalne produkty</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Wine className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Wina regionalne</p>
                       <p className="text-xs">Starannie dobrane</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Clock className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Godziny</p>
                       <p className="text-xs">12:00 - 22:00</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <TreePine className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Taras nad rzeką</p>
                       <p className="text-xs">Widok na wodę</p>
                     </div>
 
-                    <div className="bg-avangarda/5 p-4 text-center">
+                    <div className="bg-avangarda/10 p-4 text-center">
                       <Users className="h-5 w-5 mx-auto mb-1 text-avangarda" />
                       <p className="text-sm font-medium">Grupy biznesowe</p>
                       <p className="text-xs">Rezerwacje</p>

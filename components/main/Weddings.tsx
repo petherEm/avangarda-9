@@ -53,17 +53,17 @@ const Weddings = ({ lang = "pl", dict }: WeddingsProps) => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="main-paragraph-dark max-w-2xl"
             >
-              Zorganizuj niezapomniane chwile w wyjątkowej atmosferze! Oferujemy
-              profesjonalną obsługę i przestrzenie idealne na wesela, komunie,
-              chrzciny oraz inne uroczystości okolicznościowe. Twój wyjątkowy
-              dzień w najlepszym stylu!
+              Zorganizuj wyjątkowe przyjęcie w eleganckiej atmosferze Hotelu
+              Avangarda. Oferujemy stylowe przestrzenie oraz profesjonalną
+              obsługę, dzięki którym wesela, komunie, chrzciny oraz inne
+              uroczystości na długo pozostaną w pamięci Twojej i Twoich gości.
             </motion.p>
             <motion.div
               variants={fadeInUp}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
               <Link href={weddingsUrl}>
-                <Button size="lg" variant="fillRight">
+                <Button size="lg" variant="fillRight" className="border-none">
                   Dowiedz się więcej
                 </Button>
               </Link>

@@ -3,24 +3,23 @@
 import { Container } from "@/components/container";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+
 import {
   Waves,
   Trees,
-  Ship,
   Footprints,
   FishIcon as Swimming,
   Clock,
   Baby,
   PlayIcon as Playground,
   Leaf,
-  Calendar,
   Users,
   Target,
   Gamepad2,
   Flame,
   UtensilsCrossed,
-  VibrateIcon as Volleyball,
+  VolleyballIcon,
+  Circle,
 } from "lucide-react";
 import { AnimatedDecorativeBar } from "@/components/animated-decorative-bar";
 
@@ -35,21 +34,20 @@ export default function OutdoorEntertainment({
     <Container className="mt-6 sm:mt-6 md:mt-4 lg:mt-0 mb-6 lg:mb-0 bg-white w-full text-primary lg:py-20">
       <div className="max-w-7xl mx-auto sm:px-4">
         {/* 1. ZDROWIE I AKTYWNOŚĆ SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16  sm:px-4">
           {/* Main Featured Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative aspect-[7/6] w-full overflow-hidden"
+            className="relative aspect-square w-full overflow-hidden"
           >
             <Image
               src="/outdoor/out-02.jpg"
               alt="Zdrowie i Aktywność - kajaki i spacery"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={100}
             />
           </motion.div>
@@ -72,10 +70,13 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.2 }}
               className="main-paragraph-light"
             >
-              Różan położony jest na wysokiej skarpie, którą opływa rzeka Narew
-              i dopływ Różanica. Oferujemy aktywny wypoczynek na świeżym
-              powietrzu - spływy kajakowe, długie spacery oraz siatkówkę
-              plażową.
+              Różan to malowniczo położone miasteczko nad Narwią, idealne do
+              aktywnego wypoczynku w otoczeniu natury. Oferujemy spływy
+              kajakowe, długie spacery, jazdę na rowerze, bieganie, Nordic
+              Walking oraz siatkówkę plażową. Tereny wokół Hotelu Avangarda
+              sprzyjają zarówno relaksowi, jak i aktywności fizycznej. To
+              miejsce, w którym odpoczynek, regeneracja i praca tworzą
+              harmonijną całość.
             </motion.p>
 
             {/* Activity Features */}
@@ -86,16 +87,16 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Ship className="h-5 w-5 text-avangarda" />
+                  <Waves className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Spływy kajakowe</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Malownicze trasy po Narwi i Różanicy
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Footprints className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Długie spacery</h3>
@@ -104,9 +105,9 @@ export default function OutdoorEntertainment({
                   Szlaki piesze przez lasy i łąki
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Volleyball className="h-5 w-5 text-avangarda" />
+                  <VolleyballIcon className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">
                     Siatkówka plażowa
                   </h3>
@@ -115,7 +116,7 @@ export default function OutdoorEntertainment({
                   Boisko do siatkówki na świeżym powietrzu
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Trees className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Nordic Walking</h3>
@@ -134,7 +135,7 @@ export default function OutdoorEntertainment({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-20 px-4 sm:px-0"
+          className="mb-20 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -143,7 +144,8 @@ export default function OutdoorEntertainment({
             </h2>
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/outdoor/out-01.jpg"
@@ -152,6 +154,7 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Second image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/outdoor/out-03.jpg"
@@ -160,11 +163,29 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/outdoor/out-02.jpg"
+                alt="Nordic Walking"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/outdoor/out-04.jpg"
+                alt="Siatkówka plażowa"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 
         {/* 2. GRY W KLUBIE COOLA SECTION - INVERTED */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 sm:px-4">
           <div className="order-2 lg:order-1">
             <AnimatedDecorativeBar />
             <motion.h1
@@ -183,9 +204,14 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.2 }}
               className="main-paragraph-light"
             >
-              Klub Coola to miejsce, gdzie można aktywnie spędzić czas grając w
-              bilard, rzutki czy cymbergaj. Idealne miejsce na wieczorne
-              rozrywki z przyjaciółmi w klimatycznym wnętrzu.
+              Klub Coola to idealne miejsce na dzień pełen rozrywki w swobodnej
+              atmosferze. Czekają tu bilard, rzutki, piłkarzyki i cymbergaj –
+              świetna okazja, by spędzić czas aktywnie i towarzysko w
+              klimatycznym wnętrzu, niezależnie od pory roku. Dla fanów sportu
+              przygotowaliśmy telewizory z transmisjami wydarzeń sportowych, a
+              dla najmłodszych – bezpieczną i kolorową salę zabaw. To
+              przestrzeń, w której każdy – niezależnie od wieku – znajdzie coś
+              dla siebie.
             </motion.p>
 
             {/* Games Features */}
@@ -196,30 +222,30 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <Gamepad2 className="h-5 w-5 text-avangarda" />
+                  <Circle className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Bilard</h3>
                 </div>
                 <p className="text-sm text-slate-600">
                   Profesjonalne stoły bilardowe
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Target className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Rzutki</h3>
                 </div>
                 <p className="text-sm text-slate-600">Tarcze do gry w rzutki</p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Cymbergaj</h3>
                 </div>
                 <p className="text-sm text-slate-600">Klasyczna gra stołowa</p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Godziny</h3>
@@ -236,14 +262,13 @@ export default function OutdoorEntertainment({
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="order-1 lg:order-2 relative aspect-[7/6] w-full overflow-hidden"
+            className="order-1 lg:order-2 relative aspect-square w-full overflow-hidden"
           >
             <Image
               src="/klub/klub-05.jpg"
               alt="Gry w Klubie Coola - bilard i rozrywka"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={100}
             />
           </motion.div>
@@ -255,7 +280,7 @@ export default function OutdoorEntertainment({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-20 px-4 sm:px-0"
+          className="mb-20 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -264,7 +289,8 @@ export default function OutdoorEntertainment({
             </h2>
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/klub/klub-06.jpg"
@@ -273,6 +299,7 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Second image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/klub/klub-07.jpg"
@@ -281,24 +308,41 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/klub/klub-05.jpg"
+                alt="Bilard w Klubie Coola"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/klub/klub-04.JPG"
+                alt="Bar w Klubie Coola"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 
         {/* 3. ATRAKCJE DLA DZIECI SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 sm:px-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="relative aspect-[7/6] w-full overflow-hidden"
+            className="relative aspect-square w-full overflow-hidden"
           >
             <Image
               src="/outdoor/out-07.jpg"
               alt="Atrakcje dla dzieci - plac zabaw"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={100}
             />
           </motion.div>
@@ -321,9 +365,11 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.2 }}
               className="main-paragraph-light"
             >
-              Nasze otoczenie oferuje wiele atrakcji dla najmłodszych gości.
-              Dzieci mogą cieszyć się bezpieczną zabawą na świeżym powietrzu i
-              odkrywać uroki natury pod opieką rodziców.
+              W Hotelu Avangarda najmłodsi Goście znajdą wiele powodów do
+              uśmiechu. Czekają na nich bezpieczne przestrzenie do zabawy na
+              świeżym powietrzu, kontakt z naturą oraz kolorowa sala zabaw
+              wewnątrz hotelu. To idealne miejsce, by dzieci mogły się wyszaleć,
+              a rodzice – zrelaksować.
             </motion.p>
 
             {/* Kids Features */}
@@ -334,7 +380,7 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Playground className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Plac zabaw</h3>
@@ -343,7 +389,7 @@ export default function OutdoorEntertainment({
                   Nowoczesny plac zabaw z bezpiecznymi atrakcjami
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Leaf className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">
@@ -354,7 +400,7 @@ export default function OutdoorEntertainment({
                   Poznawanie lokalnej flory i fauny
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Baby className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">
@@ -365,7 +411,7 @@ export default function OutdoorEntertainment({
                   Płytki basen dla najmłodszych
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Gamepad2 className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Pokój gier</h3>
@@ -384,7 +430,7 @@ export default function OutdoorEntertainment({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-20 px-4 sm:px-0"
+          className="mb-20 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -393,7 +439,8 @@ export default function OutdoorEntertainment({
             </h2>
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/outdoor/out-04.jpg"
@@ -402,6 +449,7 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Second image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/outdoor/out-06.jpg"
@@ -410,11 +458,29 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/outdoor/out-07.jpg"
+                alt="Brodzik dla dzieci"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/spa/pool-kids.jpg"
+                alt="Pokój gier dla dzieci"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 
         {/* 4. BASEN SECTION - INVERTED */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 sm:px-4">
           <div className="order-2 lg:order-1">
             <AnimatedDecorativeBar />
             <motion.h1
@@ -433,9 +499,11 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.2 }}
               className="main-paragraph-light"
             >
-              Zapraszamy do naszego krytego basenu z podgrzewaną wodą i biczami
-              wodnymi. Idealne miejsce na relaks i rekreację dla całej rodziny.
-              Basen wyposażony w system hydromasażu i oświetlenie LED.
+              Zapraszamy do naszego krytego basenu z podgrzewaną wodą, biczami
+              wodnymi i systemem hydromasażu – to idealne miejsce na relaks i
+              rekreację dla całej rodziny. Nastrojowe oświetlenie LED tworzy
+              przyjemną atmosferę zarówno do pływania, jak i wieczornego
+              odprężenia.
             </motion.p>
 
             {/* Pool Features */}
@@ -446,7 +514,7 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Godziny otwarcia</h3>
@@ -455,7 +523,7 @@ export default function OutdoorEntertainment({
                   Codziennie: 7:00 – 22:00
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Cennik</h3>
@@ -464,7 +532,7 @@ export default function OutdoorEntertainment({
                   Goście hotelowi: BEZPŁATNIE
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Waves className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Bicze wodne</h3>
@@ -473,7 +541,7 @@ export default function OutdoorEntertainment({
                   Relaksujący masaż wodny
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Swimming className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Temperatura</h3>
@@ -493,11 +561,10 @@ export default function OutdoorEntertainment({
             className="order-1 lg:order-2 relative aspect-[7/6] w-full overflow-hidden"
           >
             <Image
-              src="/outdoor/out-05.jpg"
+              src="/spa/pool-01.jpg"
               alt="Basen rekreacyjny z biczami wodnymi"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={100}
             />
           </motion.div>
@@ -509,7 +576,7 @@ export default function OutdoorEntertainment({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-20 px-4 sm:px-0"
+          className="mb-20 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -518,7 +585,8 @@ export default function OutdoorEntertainment({
             </h2>
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/spa/pool-kids.jpg"
@@ -527,6 +595,7 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Second image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/spa/pool-03.jpg"
@@ -535,11 +604,29 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/spa/pool-01.jpg"
+                alt="Widok na basen z góry"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/spa/pool-02.jpg"
+                alt="Oświetlenie basenu"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 
         {/* 5. FORT NO.5 GRILLOWISKO SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 px-4 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 sm:px-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -552,7 +639,6 @@ export default function OutdoorEntertainment({
               alt="Fort no.5 - grillowisko i miejsce na ognisko"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               quality={100}
             />
           </motion.div>
@@ -588,7 +674,7 @@ export default function OutdoorEntertainment({
               transition={{ delay: 0.4 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Flame className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Grille i ognisko</h3>
@@ -597,7 +683,7 @@ export default function OutdoorEntertainment({
                   Profesjonalne grille i miejsce na ognisko
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <UtensilsCrossed className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Wyposażenie</h3>
@@ -606,7 +692,7 @@ export default function OutdoorEntertainment({
                   Stoły, ławki i podstawowe wyposażenie
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Users className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Pojemność</h3>
@@ -615,7 +701,7 @@ export default function OutdoorEntertainment({
                   Do 30 osób jednocześnie
                 </p>
               </div>
-              <div className="bg-pink-50 p-4">
+              <div className="bg-avangarda/10 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Clock className="h-5 w-5 text-avangarda" />
                   <h3 className="font-medium text-primary">Dostępność</h3>
@@ -634,7 +720,7 @@ export default function OutdoorEntertainment({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mb-20 px-4 sm:px-0"
+          className="mb-20 sm:px-4"
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="h-px flex-1 bg-avangarda"></div>
@@ -643,7 +729,8 @@ export default function OutdoorEntertainment({
             </h2>
             <div className="h-px flex-1 bg-avangarda"></div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* First image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/fort/fort-06.jpg"
@@ -652,10 +739,29 @@ export default function OutdoorEntertainment({
                 className="object-cover"
               />
             </div>
+            {/* Second image - always visible */}
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image
                 src="/fort/fort-04.jpg"
                 alt="Fort no.5 - miejsce grillowe"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Third image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/fort/fort-05.png"
+                alt="Fort no.5 - zewnętrzny widok"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Fourth image - hidden on mobile */}
+            <div className="relative aspect-[16/10] overflow-hidden hidden sm:block">
+              <Image
+                src="/fort/fort-03.jpg"
+                alt="Fort no.5 - historyczne wnętrze"
                 fill
                 className="object-cover"
               />
